@@ -2,41 +2,34 @@ body {
   padding: 0px;
   margin: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  height: 100%
-}
+  height: 100%; }
 
-html{
-  height: 100%
-}
+html {
+  height: 100%; }
 
 a {
-  color: #00B7FF;
-}
+  color: #00B7FF; }
 
 .parallax1 {
   /* The image used */
-  background-image: url('../images//skulls.jpg');
-
+  background-image: url("../images//skulls.jpg");
   /* Full height */
-  height: 100%; 
-
+  height: 100%;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-}
+  background-size: cover; }
 
 .parallax2 {
   /* The image used */
-  background-image: url('../images//mexico_background.jpg');
-
+  background-image: url("../images//mexico_background.jpg");
   /* Full height */
-  height: 100%; 
-
+  height: 100%;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-}
+  background-size: cover; }
+
+/*# sourceMappingURL=style.css.map */
