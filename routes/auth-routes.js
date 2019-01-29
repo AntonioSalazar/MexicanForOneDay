@@ -11,8 +11,12 @@ authRoutes.get("/signup", (req, res, next) => {
 });
 
 authRoutes.post("/signup", (req, res, next) => {
-  const username = req.body.username;
-  const password = req.body.password;
+  const name        = req.body.name;
+  const lastname    = req.body.lastname;
+  const phoneNumber = req.body.phoneNumber;
+  const email       = req.body.email;
+  const username    = req.body.username;
+  const password    = req.body.password;
 
   if (username === "" || password === "") {
     res.render("auth/signup", { message: "Indica un nombre de usuario y una contraseña para continuar :)" });

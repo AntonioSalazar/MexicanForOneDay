@@ -1,18 +1,32 @@
 <h2>Signup</h2>
 
 <form action="/signup" method="POST" id="form-container">
-  <label for="username">Username</label>
-  <input id="username" type="text" name="username" placeholder="JonSnow">
-  <br><br>
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
+
+  <label for="name">Nombre (Obligatorio)</label>
+  <input id="name" type="text" name="name" placeholder="Nombre">
+    <br>
+  <label for="lastname">Apellido (Obligatorio)</label>
+  <input id="lastname" type="text" name="lastname" placeholder="Apellido">
+    <br>
+  <label for="username">Elige un nombre de usuario:</label>
+  <input id="username" type="text" name="username" placeholder="Nombre de Usuario">
+    <br>
+  <label for="phoneNumber">Numero de telefono (Obligatorio)</label>
+  <input id="phoneNumber" type="tel" name="phoneNumber" placeholder="Numero de telefono">
+    <br>
+  <label for="email">Introduce tu email (Obligatorio)</label>
+  <input id="email" type="email" name="email" placeholder="Email">
+    <br>
+  <label for="password">Introduce una contrasena (Obligatorio)</label>
+  <input id="password" type="password" name="password" placeholder="Contrasena">
+    <br>
 
   {{#if message}}
     <div class="error-message">{{ message }}</div>
   {{/if}}
   <br><br>
 
-  <button>Create account</button>
+  <button>Registrate</button>
 
   <p class="account-message">
     Do you already have an account?
