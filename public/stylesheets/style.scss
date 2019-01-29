@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
+@font-face{
+  font-family: "mexcellent";
+  src: url("../fonts/Mexcellent.ttf")
+}
 
 * {
   margin: 0;
   padding: 0;
-}
-
-#wrapper {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
 }
 
 label {
@@ -113,6 +110,18 @@ p {
   font-size: 26px;
 }
 
-h3, h1{
-  font-family: 'Pacifico', cursive;
+span{
+  font-size: 80px;
+  font-family: "mexcellent"
+}
+
+#login-button{
+  padding: 20px
+}
+
+@media only screen and (max-width: 600px) {
+  span{
+    font-size: 40px;
+    font-family: "mexcellent"
+  }
 }
