@@ -10,12 +10,14 @@ const userSchema = new Schema({
     unique: true
   },
   email: String,
+  password: String,
   age: { 
     type: Number, min: 18
   },
   roles: {
     type: String,
-    enum: ["guide", "traveler", "viewer"]
+    enum: ["GUEST", "ADMIN", "EDITOR"],
+    default: "GUEST"
   },
   idFiles: {
     type: [String]
