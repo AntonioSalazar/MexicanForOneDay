@@ -1,33 +1,34 @@
-const express = require("express");
-const authRoutes = express.Router();
-
-const User = require("../models/user");
-
+const express      = require("express");
+const authRoutes   = express.Router();
+const User         = require("../models/user");
+const passport     = require("passport");
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
+const ensureLogin = require("connect-ensure-login");
+
 
 authRoutes.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
+authRoutes.post("/signup", (req, res, next ) =>{
+  const username = req.body.username;
+  const email    = req.body.email;
+  const password = req.body.password;
 
-authRoutes.post("/signup", (req, res, next) => {
-  const name        = req.body.name;
-  const lastname    = req.body.lastname;
-  const phoneNumber = req.body.phoneNumber;
-  const email       = req.body.email;
-  const username    = req.body.username;
-  const password    = req.body.password;
-
-  if (username === "" || password === "") {
-    res.render("auth/signup", { message: "Indica un nombre de usuario y una contraseña para continuar :)" });
-    return;
+  if (username == "" || password == "" || email == "") {
+    res.render("auth/signup", {
+      message: "Debes indicar los datos solicitados para poder continuar ☝😌"
+    })
+    return
   }
 
-  User.findOne({ username })
-  .then(user => {
-    if (user !== null) {
-      res.render("auth/signup", { message: "El usuario indicado ya existe, intenta con otro nombre" });
-      return;
+  User.findOne({email})
+  .then(user =>{
+    if(user != null){
+      res.render("auth/signup", {
+        message: "El usuario ingresado Ya existe! 😬"
+      }) 
+      return
     }
 
     const salt = bcrypt.genSaltSync(bcryptSalt);
@@ -35,20 +36,43 @@ authRoutes.post("/signup", (req, res, next) => {
 
     const newUser = new User({
       username,
+      email,
       password: hashPass
-    });
+    })
 
-    newUser.save((err) => {
+    newUser.save((err =>{
       if (err) {
-        res.render("auth/signup", { message: "Something went wrong" });
-      } else {
-        res.redirect("/");
+        res.render("auth/signup", {
+          message: "Algo salio mal, no he podido guarduar tu usuario. Intentalo en 3 horas 2 minutos 47 segundo exactos!"
+        })
+      } else{
+        res.redirect("/")
       }
-    });
+    }))
   })
-  .catch(error => {
+  .catch(error =>{
     next(error)
   })
+})
+
+authRoutes.get("/login", (req, res, next) => {
+  res.render("auth/login", { "message": req.flash("error") });
+});
+
+authRoutes.post("/login", passport.authenticate("local", {
+  successRedirect: "/private-page",
+  failureRedirect: "/login",
+  failureFlash: true,
+  passReqToCallback: true
+}));
+
+authRoutes.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
+  res.render("private", { user: req.user });
+});
+
+authRoutes.get("/logout", (req, res) => {
+  req.logout();
+  res.redirect("/login");
 });
 
 module.exports = authRoutes;
