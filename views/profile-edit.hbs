@@ -1,0 +1,14 @@
+<form action="/profile/edit?user_id={{user._id}}" method="POST">
+  <label for="name">Nombre:</label>
+  <input id="name" type="text" name="username" value="{{user.username}}" placeholder="{{user.username}}">
+
+  <label for="email">Email:</label>
+  <input id="email" type="text" name="email" value="{{user.email}}" placeholder="{{user.email}}">
+
+  <label for="password">Password:</label>
+  <input id="password" type="text" name="password" value="Password" placeholder="Password">
+
+  
+
+  <button type="submit">EDIT</button>
+</form>

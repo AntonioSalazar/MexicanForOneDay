@@ -10,11 +10,14 @@ const userSchema = new Schema({
     enum: ["GUEST", "ADMIN", "EDITOR"],
     default: "GUEST"
   },
-  idFiles: {
-    type: [String]
+  imgName: {
+    type: String,
+    default: "../images/user_icon.png"
   },
-  description: Array,
-}, {
+  imgPath: String,
+  description: String,
+}, 
+{
   timestamps: { 
     createdAt: "created_at", updatedAt: "updated_at" 
   }

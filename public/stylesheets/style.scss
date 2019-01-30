@@ -209,3 +209,22 @@ input[type=password] {
 .login{
   margin-left: 200px;
 }
+
+#custom-user-img{
+  width: 200px;
+}
+
+#profile-container {
+  color: white;
+  background: #ccc;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 10% 40%;
+}
+
+#profile-container span{
+  color: white;
+  font-size: 20px;
+}

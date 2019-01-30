@@ -1,6 +1,8 @@
 {{#if user}}
-  <div>
+  <div style="margin-top:70px">
     <a href="/"><h1>Index</h1></a>
   </div>
+  <a href="/logout">logout</a>
+    <br>
+  <a href="/profile/{{user._id}}">Tu perfil</a>  
 {{/if}}
-<a href="/logout">logout</a>
