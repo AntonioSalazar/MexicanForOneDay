@@ -1,14 +1,22 @@
-<form action="/profile/edit?user_id={{user._id}}" method="POST">
-  <label for="name">Nombre:</label>
-  <input id="name" type="text" name="username" value="{{user.username}}" placeholder="{{user.username}}">
+<div id="profile-edit">
+  <form action="/profile/edit?user_id={{user._id}}" method="POST" id="editP">
+    <label for="image">Cambiar imagen:</label>
+    <input type="file" name="imgName" id="image">
+      <br>
+    <label for="name">Nombre:</label>
+    <input id="name" type="text" name="username" value="{{user.username}}" placeholder="{{user.username}}">
+    <br>
+    <label for="description">Bio</label>
+    <input id="description" type="text" name="description" placeholder="Algo sobre ti...">
+    <br>
+    <label for="email">Email:</label>
+    <input id="email" type="text" name="email" value="{{user.email}}" placeholder="{{user.email}}">
+      <br>
+    <label for="password">Password:</label>
+    <input id="password" type="password" name="password" value="" placeholder="Password" required>
 
-  <label for="email">Email:</label>
-  <input id="email" type="text" name="email" value="{{user.email}}" placeholder="{{user.email}}">
+    <br>
 
-  <label for="password">Password:</label>
-  <input id="password" type="text" name="password" value="Password" placeholder="Password">
-
-  
-
-  <button type="submit">EDIT</button>
-</form>
+    <button type="submit">EDIT</button>
+  </form>
+</div>

@@ -10,6 +10,7 @@ const ensureLogin = require("connect-ensure-login");
 authRoutes.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
+
 authRoutes.post("/signup", (req, res, next ) =>{
   const username = req.body.username;
   const email    = req.body.email;
