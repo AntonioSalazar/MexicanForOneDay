@@ -14,7 +14,7 @@ const passport      = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const flash         = require("connect-flash");
 const User          = require("./models/user");
-const MongoStore = require("connect-mongo")(session);
+const MongoStore    = require("connect-mongo")(session);
 
 
 mongoose.Promise = Promise;
@@ -39,13 +39,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({
-  secret: "basic-auth-secret",
+  secret: "scñaiewolxa",
   cookie: { maxAge: 60000 },
+  resave: true,
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
     ttl: 24 * 60 * 60 // 1 day
   })
 }));
+
 
 passport.serializeUser((user, cb) => {
   cb(null, user._id);

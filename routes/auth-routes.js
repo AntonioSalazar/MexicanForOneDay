@@ -67,13 +67,12 @@ authRoutes.post("/login", passport.authenticate("local", {
   passReqToCallback: true
 }));
 
-authRoutes.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render("private", { user: req.user });
-});
-
 authRoutes.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/login");
 });
 
+authRoutes.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
+  res.render("private", { user: req.user });
+});
 module.exports = authRoutes;

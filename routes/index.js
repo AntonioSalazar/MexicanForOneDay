@@ -15,10 +15,10 @@ router.get("/signup", (req, res, next ) =>{
   res.render("auth/signup")
 })
 
-
-
 router.get("/profile/edit", (req, res, next ) =>{
-  User.findOne({"id" : req.params.id})
+  let userId = req.query.user_id;
+  console.log(userId);
+  User.findOne({"_id": userId})
   .then( user =>{
     res.render("profile-edit", { user })
   })
@@ -27,20 +27,17 @@ router.get("/profile/edit", (req, res, next ) =>{
 
 router.post("/profile/edit", uploadCloud.single('photo'),(req, res, next ) =>{
   const { username, email, password, description } = req.body;
+  console.log(req.file.originalname);
   const imgPath = req.file.url;
   const imgName = req.file.originalname;
   const salt = bcrypt.genSaltSync(bcryptSalt);
   const hashPass = bcrypt.hashSync(password, salt);
-  User.updateOne({"_id": req.query.user_id}, {$set: {username, email, password: hashPass, description, imgName, imgPath}}, { new: true})
+  User.updateOne({"_id": req.query.user_id}, {$set: {username, email, password: hashPass, description, imgPath, imgName}}, { new: true})
   .then(user =>{
     res.redirect(`/profile/${req.query.user_id}`);
   }) 
   .catch(err => next(err));
 })
-
-// router.get("/profile", (req, res, next ) =>{
-//   res.render("updated-profile")
-// })
 
 
 router.get("/profile/:id", (req, res, next ) =>{

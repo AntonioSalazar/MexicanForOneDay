@@ -10,11 +10,11 @@ const userSchema = new Schema({
     enum: ["GUEST", "ADMIN", "EDITOR"],
     default: "GUEST"
   },
-  imgName: {
+  imgName: String,
+  imgPath: {
     type: String,
     default: "../images/user_icon.png"
   },
-  imgPath: String,
   description: String,
 }, 
 {

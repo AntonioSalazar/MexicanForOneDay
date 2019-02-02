@@ -1,10 +1,10 @@
 <div  id="profile-container">
-  <form action="/profile?user_id={{user._id}}" method="POST">
+  {{!-- <form action="/profile?user_id={{user._id}}" method="GET"> --}}
     <img src="{{user.imgPath}}" alt="" id="custom-user-img">
     <h1>{{user.username}}</h1>
     <h2>{{user.description}}</h2>
-  </form>
+  {{!-- </form> --}}
   <br>
-  <a href="/profile/edit">Edita tu perfil</a>
+  <a href="/profile/edit?user_id={{user._id}}">Edita tu perfil</a>
   <a href="/logout">Cerrar sesion</a>
 </div>
