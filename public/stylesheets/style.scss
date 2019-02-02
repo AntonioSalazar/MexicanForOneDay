@@ -1,128 +1,108 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 @font-face{
   font-family: "mexcellent";
   src: url("../fonts/Mexcellent.ttf")
 }
 
-* {
+
+nav {
+  display: flex;
+  background: #000000;
   margin: 0;
-  padding: 0;
-}
-
-label {
-  cursor: pointer;
-}
-label:focus {
-  outline: none;
-}
-
-.menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #fff;
-  width: 240px;
-  height: 100%;
-  transform: translate3d(-240px, 0, 0);
-  transition: transform 0.35s;
-}
-.menu label.menu-toggle {
-  position: absolute;
-  right: -60px;
-  width: 60px;
-  height: 60px;
-  line-height: 0px;
-  display: block;
-  padding: 0;
-  text-indent: -9999px;
-  background: #fff url(https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png) 50% 50%/25px 25px no-repeat;
-}
-.menu ul li > label {
-  background: url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-right-b-128.png) 95% 50%/16px 16px no-repeat;
-}
-.menu ul li a, .menu ul li label {
-  display: block;
-  text-align: center;
-  padding: 0 20px;
-  line-height: 60px;
-  text-decoration: none;
-  color: #000;
-}
-.menu ul li a:hover, .menu ul li label:hover {
-  color: #666;
-}
-
-/* hide inputs */
-.menu-checkbox {
-  display: none;
-}
-
-/* hide navigation icon for sublabels */
-.menu .menu label.menu-toggle {
-  background: none;
-}
-
-/* fade in checked menu */
-.menu-checkbox:checked + .menu {
-  transform: translate3d(0, 0, 0);
-}
-
-/* for show */
-html, body {
-  height: 100%;
-}
-
-body {
-  background: url("../images/mexicoCity.jpg") 50% 50%/cover;
-}
-
-p {
-  margin-bottom: 15px;
-  font-size: 15px;
-}
-
-#info {
-  display: table;
-  background: rgba(0, 0, 0, 0.4);
-  height: 100%;
+  position: fixed;
   width: 100%;
-}
-#info #info-content {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  text-transform: uppercase;
-  color: #fff;
-  font-size: 12px;
-}
-#info #info-content h1 {
-  color: #fff;
-  border: 3px solid #fff;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.1);
-  font-size: 22px;
-  font-weight: normal;
-  padding: 20px;
-  margin: 10px;
-  display: inline-block;
-}
-#info #info-content h1 strong {
-  display: block;
-  font-size: 26px;
+  height: 65px;
 }
 
-span{
-  font-size: 80px;
-  font-family: "mexcellent"
+nav img {
+  padding-left: 30px;
 }
 
-p, h2{
-  font-family: "mexcellent"
+ul {
+  list-style: none;
+  display: inline-flex;
+  float: right;
+  margin-right: 10px;
+  font-size: 16px;
+  font-family:sans-serif;
+  font-weight: bold;
+  margin-top: 20px;
+  padding-left: 780px;
 }
 
-#login-button{
-  padding: 20px
+ul a{
+  text-decoration: none;
+  color: #ffffff;
 }
+
+li{
+  padding-right: 24px;
+}
+
+.stage{
+  display: flex;
+  background-image: url("../images/home-stage.jpg");
+  width: 100vw;
+  height:600px;
+  background-size: cover;
+}
+.stage h1{
+ display:flex;
+ text-align: center;
+ padding-left: 12%;
+ padding-top: 20%;
+}
+
+h1 {
+display: flex;
+font-family: Roboto;
+font-weight: 700;
+color: #ffffff;
+
+padding-top:30vh;
+margin-top: 0px;
+font-family:sans-serif;
+font-size: 48px;
+font-weight: 100px;
+}
+
+.button{
+padding-top: 12px;
+padding-right: 24px;
+}
+
+.btn{
+  color:#ffffff;
+  background-color: none;
+  border-color: none;
+}
+
+.btn-primary {
+  width: 200px;
+  height: 40px;
+  background-color: #DE4549;
+  border-radius:90px;
+}
+
+.btn-secondary {
+  color: #DE4549;
+  background-color: none;
+  border-color: none;
+}
+
+.btn-stage {
+  width: 200px;
+  height: 40px;
+  background-color: #DE4549;
+  border-radius:90px;
+}
+
+.first-section {
+  width: 100vw;
+  height:900px;
+}
+
 
 @media only screen and (max-width: 600px) {
   span{
