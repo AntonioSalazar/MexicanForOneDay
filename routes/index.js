@@ -1,6 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const User    = require("../models/user");
+const Experience = require("../models/experience");
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 const ensureLogin = require("connect-ensure-login");
@@ -39,6 +40,13 @@ router.post("/profile/edit", uploadCloud.single('photo'),(req, res, next ) =>{
   .catch(err => next(err));
 })
 
+router.get("/dashboard", (req, res, next ) =>{
+  Experience.find()
+  .then(experiences =>{
+    res.render("dashboard", {experiences})
+  })
+  .catch(err => next(err))
+})
 
 router.get("/profile/:id", (req, res, next ) =>{
   let userId = req.params.id
@@ -48,6 +56,7 @@ router.get("/profile/:id", (req, res, next ) =>{
   })
   .catch(err => next(err))
 })
+
 
 router.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
   res.render("private", { user: req.user });
