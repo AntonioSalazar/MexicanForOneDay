@@ -9,35 +9,30 @@
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
+    <nav>
+      <img src="./images/logo-img.png" alt="logo-img">
+        <ul>
+          <li>
+            <a href="#">Design Tour</a>
+          </li>
+          <li>
+            <a href="#">About us</a>
+          </li>
+          <li>
+            <a href="#">Our Trips</a>
+          </li>
 
+        </ul>
+        <form class="button" action="/login" method="GET">
+          <a class="btn btn-secondary" href="/login" role="button">Login</a>
+        </form>
+        <form class="button" action="/signup" method="GET">
+           <a class="btn btn-primary" href="/signup" role="button">Sign up</a>
+       </form>
+    </nav>
 
-  <div>
-  <input type="checkbox" id="menu" name="menu" class="menu-checkbox">
-  <div class="menu">
-    <label class="menu-toggle" for="menu"><span>Toggle</span></label>
-    <ul>
-      <li>
-        <a href="#">Experiencias</a>
-      </li>
-      <li>
-        <a href="#">Tours</a>
-      </li>
-      <li>    
-        <a href="#">Lugares Recomendados</a>  
-      </li>
-      <li>
-        <a href="#">Contacto</a>
-      </li>      
-      <li>
-        <a href="#">Acerca de Nosotros</a>
-      </li>
-      <li>
-        <a href="#">Politica de Privacidad</a>
-      </li>
-    </ul>
-  </div>
-</div>
   {{{body}}}
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
   <script src="/javascripts/script.js"></script>
 </body>
