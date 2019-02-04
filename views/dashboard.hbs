@@ -1,24 +1,27 @@
-<div style="margin: 100px">
+<div id="experience-container">
   <h1>Own experiences</h1>
-  {{#each experiences}}
-    <img src="{{this.imgPath}}" alt="">
-    <h2>{{this.description}}</h2>
-    <h3>{{this.title}}</h3>
-
-    <div class="rating">
-      <p>Rate me!</p>
-      <div class="hearts">
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-    </div>
-</div>
-
-
-
+  {{#each experiences }}
+  <div id="own-experiences-div">
+    <img src="{{this.imgPath}}" alt="" id="img-experience">
+    <span>{{this.descriptionPreview}}</span>
+    <h5>{{this.title}}</h5>
     {{else}}
     <h2>no experiences yet :(</h2>
+    </div>
   {{/each}}
 </div>
+  <a href="/experience/add">Añade una experiencia</a>
+<div id="experience-container">
+  
+  {{!-- <h1>Group Tour</h1>
+  {{#each tour }}
+  <div id="own-experiences-div">
+    <img src="{{this.imgPath}}" alt="" id="img-experience">
+    <span>{{this.descriptionPreview}}</span>
+    <h5>{{this.title}}</h5>
+    {{else}}
+    <h2>no group-tours yet :(</h2>
+    </div>
+  {{/each}}
+    <a href="/group-tour/add">Añade un tour grupal</a>
+</div> --}}

@@ -249,8 +249,7 @@ input[type=password] {
   transform-origin: 100% 100%; }
 
 .rating {
-  width: 90%;
-  background-color: #ddd; }
+  width: 90%; }
 
 .on:before, .on:after {
   background: red; }
@@ -261,5 +260,25 @@ p {
   color: #aaa;
   margin: 4%;
   padding-top: 1%; }
+
+#own-experiences-div {
+  display: flex;
+  flex-direction: column; }
+
+#img-experience {
+  width: 20%;
+  height: 20%; }
+
+#own-experiences-div h2, h3 {
+  width: 30%; }
+
+#own-experiences-div span {
+  font-size: 15px;
+  color: #B5B5B5; }
+
+#experience-container {
+  margin: 100px;
+  display: flex;
+  flex-direction: column; }
 
 /*# sourceMappingURL=style.css.map */

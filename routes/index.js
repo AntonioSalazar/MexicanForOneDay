@@ -1,9 +1,10 @@
-const express = require('express');
-const router  = express.Router();
-const User    = require("../models/user");
-const Experience = require("../models/experience");
-const bcrypt = require("bcrypt");
-const bcryptSalt = 10;
+const express     = require('express');
+const router      = express.Router();
+const User        = require("../models/user");
+const Tour        = require("../models/tour");
+const Experience  = require("../models/experience");
+const bcrypt      = require("bcrypt");
+const bcryptSalt  = 10;
 const ensureLogin = require("connect-ensure-login");
 const uploadCloud = require('../config/cloudinary.js');
 
@@ -28,7 +29,6 @@ router.get("/profile/edit", (req, res, next ) =>{
 
 router.post("/profile/edit", uploadCloud.single('photo'),(req, res, next ) =>{
   const { username, email, password, description } = req.body;
-  console.log(req.file.originalname);
   const imgPath = req.file.url;
   const imgName = req.file.originalname;
   const salt = bcrypt.genSaltSync(bcryptSalt);
@@ -40,6 +40,7 @@ router.post("/profile/edit", uploadCloud.single('photo'),(req, res, next ) =>{
   .catch(err => next(err));
 })
 
+
 router.get("/dashboard", (req, res, next ) =>{
   Experience.find()
   .then(experiences =>{
@@ -47,6 +48,26 @@ router.get("/dashboard", (req, res, next ) =>{
   })
   .catch(err => next(err))
 })
+
+router.post("/dashboard", uploadCloud.single("photo"), (req, res, next) =>{
+  const {title, descriptionPreview, description, duration, rate, capacity} = req.body
+  const imgPath = req.file.url;
+  const imgName = req.file.originalname;
+  const newExperience = new Experience({ title, descriptionPreview, description, duration, rate, imgPath, imgName, capacity})
+  newExperience.save()
+  .then(experience =>{
+    res.redirect("/dashboard")
+  })
+  .catch(err => next(err))
+})
+
+router.get("/experience/add", (req, res, next) =>{
+  res.render("experience-add")
+})
+
+// router.get("/group-tour/add", (req, res, next ) =>{
+//   res.render("group-tour-add")
+// })
 
 router.get("/profile/:id", (req, res, next ) =>{
   let userId = req.params.id
