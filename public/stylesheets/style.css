@@ -64,9 +64,6 @@ label:focus {
 html, body {
   height: 100%; }
 
-body {
-  background: url("../images/mexicoCity.jpg") 50% 50%/cover; }
-
 p {
   margin-bottom: 15px;
   font-size: 15px; }
@@ -267,14 +264,7 @@ p {
 
 #img-experience {
   width: 20%;
-  height: 20%; }
-
-#own-experiences-div h2, h3 {
-  width: 30%; }
-
-#own-experiences-div span {
-  font-size: 15px;
-  color: #B5B5B5; }
+  height: 200px; }
 
 #experience-container {
   margin: 100px;

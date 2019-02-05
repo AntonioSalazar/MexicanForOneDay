@@ -15,7 +15,8 @@ const tours = [
     capacity: 8,
     duration: 9,
     rate: 8,
-    tourCategory: ["museum", "culture"]
+    tourCategory: ["museum", "culture"],
+    tourType: "groupTour"
 },
 {
   imgName: "group2.jpg",
@@ -26,7 +27,8 @@ const tours = [
   capacity: 15,
   duration: 8,
   rate: 8,
-  tourCategory: ["museum", "culture"]
+  tourCategory: ["museum", "culture"],
+  tourType: "experience"
 }
 ]
 

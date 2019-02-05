@@ -49,5 +49,5 @@ window.onload = ()=>{
       $(this).prevAll().addClass('on');
     });
   });
-  
+
 }

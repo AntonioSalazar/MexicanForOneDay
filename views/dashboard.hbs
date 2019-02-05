@@ -1,6 +1,6 @@
-<div id="experience-container">
+{{!-- <div id="experience-container">
   <h1>Own experiences</h1>
-  {{#each experiences }}
+  {{#each tours }}
   <div id="own-experiences-div">
     <img src="{{this.imgPath}}" alt="" id="img-experience">
     <span>{{this.descriptionPreview}}</span>
@@ -13,8 +13,8 @@
   <a href="/experience/add">Añade una experiencia</a>
 <div id="experience-container">
   
-  {{!-- <h1>Group Tour</h1>
-  {{#each tour }}
+  <h1>Group Tour</h1>
+  {{#each tours }}
   <div id="own-experiences-div">
     <img src="{{this.imgPath}}" alt="" id="img-experience">
     <span>{{this.descriptionPreview}}</span>
@@ -25,3 +25,54 @@
   {{/each}}
     <a href="/group-tour/add">Añade un tour grupal</a>
 </div> --}}
+
+<div id="experience-container">
+  <h1>Own experiences</h1>
+  {{#each tours}}
+  <div id="own-experience-div">
+      {{#ifCond tourType "experience" }}
+        <img src="{{this.imgPath}}" alt="" id="img-experience">
+        <h6>{{this.descriptionPreview}}</h6>
+        <h4>{{this.title}}</h4>
+      {{/ifCond}}
+      {{else}}
+        <h2>No experieces yet :(</h2>
+  </div>
+  <br>
+  {{/each}}
+    <a href="/experience/add">Añade tu propia experiencia:</a>
+</div>
+
+<div id="experience-container">
+  <h1>Group Tours</h1>
+  {{#each tours}}
+  <div id="own-experience-div">
+      {{#ifCond tourType "groupTour" }}
+        <img src="{{this.imgPath}}" alt="" id="img-experience">
+        <h6>{{this.descriptionPreview}}</h6>
+        <h4>{{this.title}}</h4>
+      {{/ifCond}}
+      {{else}}
+        <h2>No group Tours yet :(</h2>
+  </div>
+  <br>
+  {{/each}}
+    <a href="/group_tour/add">Añade tu propio tour:</a>
+</div>
+
+<div id="experience-container">
+  <h1>Waking Tour</h1>
+  {{#each tours}}
+  <div id="own-experience-div">
+      {{#ifCond tourType "walkingTour" }}
+        <img src="{{this.imgPath}}" alt="" id="img-experience">
+        <h6>{{this.descriptionPreview}}</h6>
+        <h4>{{this.title}}</h4>
+      {{/ifCond}}
+      {{else}}
+        <h2>No walking tour yet :(</h2>        
+  </div>
+  <br>
+  {{/each}}
+    <a href="/walking_tour/add">Añade tu propio tour:</a>
+</div>

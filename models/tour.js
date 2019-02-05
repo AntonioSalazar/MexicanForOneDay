@@ -16,6 +16,10 @@ const tourSchema = new Schema({
   tourCategory:{
     type: [String],
     enum: ["museum", "culture", "entertainment", "gastronomy", "archeology", "architecture"]
+  },
+  tourType: {
+    type: String,
+    enum: ["experience", "groupTour", "walkingTour"]
   }
 })
 
