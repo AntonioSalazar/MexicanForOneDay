@@ -1,39 +1,15 @@
-{{!-- <div id="experience-container">
-  <h1>Own experiences</h1>
-  {{#each tours }}
-  <div id="own-experiences-div">
-    <img src="{{this.imgPath}}" alt="" id="img-experience">
-    <span>{{this.descriptionPreview}}</span>
-    <h5>{{this.title}}</h5>
-    {{else}}
-    <h2>no experiences yet :(</h2>
-    </div>
-  {{/each}}
-</div>
-  <a href="/experience/add">Añade una experiencia</a>
-<div id="experience-container">
-  
-  <h1>Group Tour</h1>
-  {{#each tours }}
-  <div id="own-experiences-div">
-    <img src="{{this.imgPath}}" alt="" id="img-experience">
-    <span>{{this.descriptionPreview}}</span>
-    <h5>{{this.title}}</h5>
-    {{else}}
-    <h2>no group-tours yet :(</h2>
-    </div>
-  {{/each}}
-    <a href="/group-tour/add">Añade un tour grupal</a>
-</div> --}}
 
 <div id="experience-container">
   <h1>Own experiences</h1>
   {{#each tours}}
   <div id="own-experience-div">
       {{#ifCond tourType "experience" }}
+      <a href="/detail_experience/{{this._id}}">
         <img src="{{this.imgPath}}" alt="" id="img-experience">
         <h6>{{this.descriptionPreview}}</h6>
         <h4>{{this.title}}</h4>
+      </a>
+      <h4>Calificacion: {{this.rate}}</h4>
       {{/ifCond}}
       {{else}}
         <h2>No experieces yet :(</h2>

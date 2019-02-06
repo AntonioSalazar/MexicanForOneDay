@@ -2,7 +2,6 @@ const express     = require('express');
 const router      = express.Router();
 const User        = require("../models/user");
 const Tour        = require("../models/tour");
-// const Experience  = require("../models/experience");
 const bcrypt      = require("bcrypt");
 const bcryptSalt  = 10;
 const ensureLogin = require("connect-ensure-login");
@@ -44,6 +43,7 @@ router.post("/profile/edit", uploadCloud.single('photo'),(req, res, next ) =>{
 router.get("/dashboard", async(req, res, next ) =>{
   try{
     const tours = await(Tour.find())
+    console.log(tours);
     res.render("dashboard", {tours})
   }
   catch (err){
@@ -74,6 +74,15 @@ router.get("/group_tour/add", (req, res, next ) =>{
 
 router.get("/walking_tour/add", (req, res, next ) =>{
   res.render("walking-tour-add")
+})
+
+router.get("/detail_experience/:id", (req, res, next ) =>{
+  let tourId = req.params.id
+  Tour.findOne({"_id": tourId})
+  .then(tour =>{
+    res.render("detail-experience", {tour})
+  })
+  .catch(err => next(err))
 })
 
 router.get("/profile/:id", (req, res, next ) =>{
