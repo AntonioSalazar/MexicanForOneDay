@@ -24,9 +24,12 @@
   {{#each tours}}
   <div id="own-experience-div">
       {{#ifCond tourType "groupTour" }}
+      <a href="/detail_group_tour/{{this._id}}">
         <img src="{{this.imgPath}}" alt="" id="img-experience">
         <h6>{{this.descriptionPreview}}</h6>
         <h4>{{this.title}}</h4>
+        </a>
+        <h4>Calificacion: {{this.rate}}</h4>
       {{/ifCond}}
       {{else}}
         <h2>No group Tours yet :(</h2>
@@ -37,13 +40,16 @@
 </div>
 
 <div id="experience-container">
-  <h1>Waking Tour</h1>
+  <h1>Walking Tour</h1>
   {{#each tours}}
   <div id="own-experience-div">
       {{#ifCond tourType "walkingTour" }}
+      <a href="/detail_walking_tour/{{this._id}}">
         <img src="{{this.imgPath}}" alt="" id="img-experience">
         <h6>{{this.descriptionPreview}}</h6>
         <h4>{{this.title}}</h4>
+      </a>
+      <h4>Calificacion: {{this.rate}}</h4>
       {{/ifCond}}
       {{else}}
         <h2>No walking tour yet :(</h2>        

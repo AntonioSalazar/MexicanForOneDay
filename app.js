@@ -41,7 +41,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({
   secret: "scñaiewolxa",
-  cookie: { maxAge: 60000 },
+  cookie: { maxAge: 160000 },
   resave: true,
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
