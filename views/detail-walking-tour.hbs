@@ -1,0 +1,36 @@
+<div style="margin: 100px">
+  {{walkingTour.title}}
+    <br>
+  {{walkingTour.username}}
+  <br>
+  {{walkingTour.descriptionPreview}}
+    <br>
+  {{walkingTour.description}}
+    <br>
+  <p>La duracion aproximada del tour es de: {{walkingTour.duration}} horas</p>
+    <br>
+  <p>Some tips</p>
+    <br>
+  {{walkingTour.tips}}
+    <br>
+  Imagenes:
+    <br>
+  <img src="{{walkingTour.imgPath}}" alt="">
+  <p>Deja un comentario: </p>
+  <form action="/reviews/add?tour_id={{walkingTour._id}}" method="post">
+    <label for="">Usuario:</label>
+    <input type="text" name="user">
+
+    <label for="">Comentario:</label>
+    <textarea type="text" name="comments"></textarea>
+
+    <button type="submit">Publicar</button> 
+    </form>
+  <h2>Reviews</h2>
+    {{#each tour.reviews}}
+    <div>
+      <p>{{this.comments}}</p>
+      <span>{{this.user}}</span>
+    </div>
+    {{/each}}
+</div>

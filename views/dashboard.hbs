@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <section class="login">
   <div class="container-login">
     <div class="title_dasboard">
@@ -18,22 +19,70 @@
     <img src="{{this.imgPath}}" alt="">
     <h2>{{this.description}}</h2>
     <h3>{{this.title}}</h3>
+=======
+>>>>>>> develop
 
-    <div class="rating">
-      <p>Rate me!</p>
-      <div class="hearts">
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-    </div>
+<div id="experience-container">
+  <h1>Own experiences</h1>
+  {{#each tours}}
+  <div id="own-experience-div">
+      {{#ifCond tourType "experience" }}
+      <a href="/detail_experience/{{this._id}}">
+        <img src="{{this.imgPath}}" alt="" id="img-experience">
+        <h6>{{this.descriptionPreview}}</h6>
+        <h4>{{this.title}}</h4>
+      </a>
+      <h4>Calificacion: {{this.rate}}</h4>
+      {{/ifCond}}
+      {{else}}
+        <h2>No experieces yet :(</h2>
+  </div>
+  <br>
+  {{/each}}
+    <a href="/experience/add">Añade tu propia experiencia:</a>
 </div>
 
-
-
-    {{else}}
-    <h2>no experiences yet :(</h2>
+<div id="experience-container">
+  <h1>Group Tours</h1>
+  {{#each tours}}
+  <div id="own-experience-div">
+      {{#ifCond tourType "groupTour" }}
+      <a href="/detail_group_tour/{{this._id}}">
+        <img src="{{this.imgPath}}" alt="" id="img-experience">
+        <h6>{{this.descriptionPreview}}</h6>
+        <h4>{{this.title}}</h4>
+        </a>
+        <h4>Calificacion: {{this.rate}}</h4>
+      {{/ifCond}}
+      {{else}}
+        <h2>No group Tours yet :(</h2>
+  </div>
+  <br>
   {{/each}}
+    <a href="/group_tour/add">Añade tu propio tour:</a>
+</div>
+
+<div id="experience-container">
+  <h1>Walking Tour</h1>
+  {{#each tours}}
+  <div id="own-experience-div">
+      {{#ifCond tourType "walkingTour" }}
+      <a href="/detail_walking_tour/{{this._id}}">
+        <img src="{{this.imgPath}}" alt="" id="img-experience">
+        <h6>{{this.descriptionPreview}}</h6>
+        <h4>{{this.title}}</h4>
+      </a>
+      <h4>Calificacion: {{this.rate}}</h4>
+      {{/ifCond}}
+      {{else}}
+        <h2>No walking tour yet :(</h2>        
+  </div>
+  <br>
+  {{/each}}
+<<<<<<< HEAD
 </div>
 >>>>>>> 56c39ef613d65073468bb6518865c07e17bd7c89
+=======
+    <a href="/walking_tour/add">Añade tu propio tour:</a>
+</div>
+>>>>>>> develop

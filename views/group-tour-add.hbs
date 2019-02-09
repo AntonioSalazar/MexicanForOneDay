@@ -1,0 +1,29 @@
+<h1>Cuentanos del tour: </h1>
+
+<form action="/dashboard" method="POST" enctype="multipart/form-data">
+  <label for="title">Titulo:</label>
+  <input id="title" type="text" name="title" value="" placeholder="Como te gustaria llamarle a tu experiencia">
+    <br>
+  <label for="descriptionPreview">Preview</label>
+  <input type="text" id="descriptionPreview" name="descriptionPreview" value="" placeholder="Describe tu experiencia en 5 palabras">
+    <br>
+  <label for="description">Description</label>
+  <input type="text" id="description" name="description" value="" placeholder="Cuentanos a detalle tu experiencia!">
+    <br>
+  <label for="duration">Duracion</label>
+  <input type="number" id="duration" name="duration" value="" placeholder="Cuanto dura un tour de este tipo?">
+    <br>
+  <label for="tips">Tips</label>
+  <input type="text" name="tips" id="">
+    <br>
+  <label for="rate">Calificacion</label>
+  <input type="number" id="rate" name="rate" value="" placeholder="Del 1 al 10 que calificacion le darias?">
+    <br>
+  <label for="">Photo</label>
+  <input type="file" name="photo" id="img-experience">
+    <br>
+  <input type="checkbox" name="tourType" value="experience">Experience<br>
+  <input type="checkbox" name="tourType" value="groupTour">Group Tour<br>
+  <input type="checkbox" name="tourType" value="walkingTour" >Walking Tour<br>
+  <input type="submit" name="" id="" value="Salvar">
+</form>
