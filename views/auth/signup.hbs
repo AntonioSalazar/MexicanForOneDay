@@ -1,34 +1,28 @@
-<div class="center"> 
-  <div class="container">
-  <h2>Signup</h2>
-
-  <form action="/signup" method="POST">
-
-    <label for="name"><p>Nombre (Obligatorio)</p></label>
-    <input id="name" type="text" name="username" placeholder="Nombre">
-      <br>
-    <label for="email"><p>Introduce tu email (Obligatorio)</p></label>
-    <input id="email" type="text" name="email" placeholder="Email">
-      <br>
-    <label for="password"><p>Introduce una contrasena (Obligatorio)</p></label>
-    <input id="password" type="password" name="password" placeholder="Contrasena">
-      <br>
-    {{#if message}}
-      <div class="error-message">{{ message }}</div>
-    {{/if}}
-    <br>
-    <button type="submit" name="button">Crea tu cuenta</button>
-    <br>
-
-    <p class="account-message">
-      Ya tienes una cuenta?
-      <a href="/login">Login</a>
-    </p>
-
-    <p>De regreso al <a href="/" role="button" aria-pressed="true">Menu Principal</p>
-    
-    </a>
-    </div>
-</div>
-
-</form>
+<section class="login">
+    <div class="container-login">
+      <div class="title">
+        <h3>You can be mexican too</h3>
+        <p>Just take a few minutes</p>
+      </div>
+      <form action="/login" method="POST">
+        <div class="input-comp">
+          <label for="email">Email:</label>
+          <input id="email" type="text" name="email">
+        </div>
+        <div class="input-comp">
+          <label for="password">Password:</label>
+          <input type="password" name="password">
+        </div>
+        {{#if message}}
+        <div class="error-message">{{ message }}</div>
+          {{/if}}
+        <form class="btn-red" action="/dashboard" method="GET">
+             <a class="btn btn-red" href="/dashboard" role="button">Im ready to be chilango!</a>
+        </form>
+        <div class="link2">
+            <p>I already have an account?</p>
+            <a href="/login">Log in</a>
+        </div>
+    </form>
+  </div>
+</section>

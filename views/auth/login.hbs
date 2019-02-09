@@ -1,18 +1,31 @@
-<div class="login">
-  <form action="/login" method="POST">
-    <div>
-      <label for="email">Email:</label>
-      <input id="email" type="text" name="email">
-    </div>
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" name="password">
-    </div>
-    {{#if message}}
+<section class="login">
+    <div class="container-login">
+      <div class="title">
+        <h3>Welcome back</h3>
+        <p>Ready for a new chilanga experience</p>
+      </div>
+      <form action="/login" method="POST">
+        <div class="input-comp">
+          <label for="email">Email:</label>
+          <input id="email" type="text" name="email">
+        </div>
+        <div class="input-comp">
+          <label for="password">Password:</label>
+          <input type="password" name="password">
+        </div>
+        {{#if message}}
         <div class="error-message">{{ message }}</div>
-    {{/if}}
-    <div>
-      <input type="submit" value="Log In">
-    </div>
-  </form>
-</div>
+          {{/if}}
+        <form class="btn-red" action="/dashboard" method="GET">
+             <a class="btn btn-red" href="/dashboard" role="button">New mexican adventure</a>
+        </form>
+        <div class="link">
+          <a href="#">As a good mexican I forgot my password!</a>
+        </div>
+        <div class="link2">
+            <p>Be part of this experience !</p>
+            <a href="/signup">Sign up HERE</a>
+        </div>
+    </form>
+  </div>
+</section>
