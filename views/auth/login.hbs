@@ -1,4 +1,5 @@
 <section class="login">
+
     <div class="container-login">
       <div class="title">
         <h3>Welcome back</h3>
@@ -13,12 +14,11 @@
           <label for="password">Password:</label>
           <input type="password" name="password">
         </div>
-        {{#if message}}
+          {{#if message}}
         <div class="error-message">{{ message }}</div>
           {{/if}}
-        <form class="btn-red" action="/dashboard" method="GET">
-             <a class="btn btn-red" href="/dashboard" role="button">New mexican adventure</a>
-        </form>
+
+        <button type="submit" name="button" class="btn btn-red">New mexican adventure</button>
         <div class="link">
           <a href="#">As a good mexican I forgot my password!</a>
         </div>

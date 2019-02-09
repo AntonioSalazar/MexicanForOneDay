@@ -4,7 +4,12 @@
         <h3>You can be mexican too</h3>
         <p>Just take a few minutes</p>
       </div>
-      <form action="/login" method="POST">
+
+      <form action="/signup" method="POST">
+        <div class="input-comp">
+          <label for="username">User Name:</label>
+          <input type="text" name="username" id="">
+        </div>
         <div class="input-comp">
           <label for="email">Email:</label>
           <input id="email" type="text" name="email">
@@ -16,9 +21,7 @@
         {{#if message}}
         <div class="error-message">{{ message }}</div>
           {{/if}}
-        <form class="btn-red" action="/dashboard" method="GET">
-             <a class="btn btn-red" href="/dashboard" role="button">Im ready to be chilango!</a>
-        </form>
+        <button type="submit" name="button" class="btn btn-red">Im ready to be a chilango!</button>
         <div class="link2">
             <p>I already have an account?</p>
             <a href="/login">Log in</a>

@@ -47,7 +47,7 @@ authRoutes.post("/signup", (req, res, next ) =>{
           message: "Algo salio mal, no he podido guarduar tu usuario. Intentalo en 3 horas 2 minutos 47 segundo exactos!"
         })
       } else{
-        res.redirect("/")
+        res.redirect("/dashboard")
       }
     }))
   })
@@ -73,7 +73,7 @@ authRoutes.get("/logout", (req, res) => {
   res.redirect("/login");
 });
 
-authRoutes.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
+authRoutes.get("/dashboard", ensureLogin.ensureLoggedIn(), (req, res) => {
   res.render("private", { user: req.user });
 });
 module.exports = authRoutes;
