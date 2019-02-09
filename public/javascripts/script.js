@@ -51,3 +51,7 @@ window.onload = ()=>{
   });
 
 }
+
+// Handlebars.registerHelper("log", (algo)=>{
+//   console.log(algo)
+// })

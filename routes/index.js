@@ -2,7 +2,7 @@ const express     = require('express');
 const router      = express.Router();
 const User        = require("../models/user");
 const Tour        = require("../models/tour");
-const bcrypt      = require("bcryptjs");
+const bcrypt      = require("bcrypt");
 const bcryptSalt  = 10;
 const ensureLogin = require("connect-ensure-login");
 const uploadCloud = require('../config/cloudinary.js');
@@ -56,12 +56,12 @@ router.get("/dashboard", async(req, res, next ) =>{
 })
 
 router.post("/dashboard", uploadCloud.single("photo"), (req, res, next) =>{
-  const {title, descriptionPreview, description, duration, rate, capacity, tourType} = req.body
+  const {title, descriptionPreview, description, duration, rate, capacity, tourType, comments, tips} = req.body
   const user = req.user
   console.log(user);
   const imgPath = req.file.url;
   const imgName = req.file.originalname;
-  const newTour = new Tour({ title, descriptionPreview, description, duration, rate, imgPath, imgName, capacity, tourType, author: user.id, username: user.username})
+  const newTour = new Tour({ title, descriptionPreview, description, duration, rate, imgPath, imgName, capacity, tourType, author: user.id, username: user.username, comments, tips})
   newTour.save()
   .then(tour =>{
     res.redirect("/dashboard")
@@ -109,7 +109,16 @@ router.get("/detail_walking_tour/:id", (req, res, next ) =>{
   }).catch(err => {
     next(err)
   });
-})
+});
+
+router.post('/reviews/add', (req, res, next) => {
+  const { user, comments } = req.body;
+  Tour.updateOne({ _id: req.query.tour_id }, { $push: { reviews: { user, comments }}})
+  .then(tour => {
+    res.redirect('/dashboard')
+  })
+  .catch(err => next(err))
+});
 
 router.get("/profile/:id", (req, res, next ) =>{
   let userId = req.params.id;

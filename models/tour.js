@@ -10,11 +10,16 @@ const tourSchema = new Schema({
   description: String,
   capacity: Number,
   author: { type : Schema.Types.ObjectId, ref: 'User' },
+  tips: String,  
   duration: {
     type: Number,
     min: 1
   },
   rate: Number,
+  reviews: {
+    user: String,
+    comments: String
+  },
   tourCategory:{
     type: [String],
     enum: ["museum", "culture", "entertainment", "gastronomy", "archeology", "architecture"]

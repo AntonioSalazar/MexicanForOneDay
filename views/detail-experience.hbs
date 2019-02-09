@@ -1,5 +1,41 @@
-<h1 style="margin: 100px">
+<div style="margin: 100px">
   {{tour.title}}
     <br>
   {{tour.username}}
-</h1>
+    <br>
+  {{tour.descriptionPreview}}
+    <br>
+  {{tour.description}}
+    <br>
+  <p>La duracion aproximada del tour es de: {{tour.duration}} horas</p>
+    <br>
+  <p>Some tips</p>
+    <br>
+  {{tour.tips}}
+    <br>
+  Imagenes:
+    <br>
+  <img src="{{tour.imgPath}}" alt="">
+
+  <p>Deja un comentario: </p>
+  <form action="/reviews/add?tour_id={{tour._id}}" method="post">
+    <label for="">Usuario:</label>
+    <input type="text" name="user">
+
+    <label for="">Comentario:</label>
+    <textarea type="text" name="comments"></textarea>
+
+    <button type="submit">Publicar</button>
+    
+    <h2>Reviews</h2>
+    
+  </form>
+{{!--   
+    {{#each-in tour.reviews as |a b|}}
+      {{a}}
+      <hr>
+      {{#each tourId as |data|}}
+        {{data}}.{{data}} ----
+      {{/each}}
+    {{/each}} --}}
+</div>

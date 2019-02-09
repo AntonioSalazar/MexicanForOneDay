@@ -1,5 +1,38 @@
-<h1 style="margin: 100px">
+<div style="margin: 100px">
   {{groupTour.title}}
     <br>
   {{groupTour.username}}
-</h1>
+    <br>
+  {{groupTour.descriptionPreview}}
+    <br>
+  {{groupTour.description}}
+    <br>
+  <p>La duracion aproximada del tour es de: {{groupTour.duration}} horas</p>
+    <br>
+  <p>Some tips</p>
+    <br>
+  {{groupTour.tips}}
+    <br>
+  Imagenes:
+    <br>
+  <img src="{{groupTour.imgPath}}" alt="">
+
+  <p>Deja un comentario: </p>
+  <form action="/reviews/add?tour_id={{groupTour._id}}" method="post">
+    <label for="">Usuario:</label>
+    <input type="text" name="user">
+
+    <label for="">Comentario:</label>
+    <textarea type="text" name="comments"></textarea>
+
+    <button type="submit">Publicar</button> 
+  </form>
+    
+  <h2>Reviews</h2>
+    {{#each tour.reviews}}
+    <div>
+      <p>{{this.comments}}</p>
+      <span>{{this.user}}</span>
+    </div>
+    {{/each}}
+</div>
