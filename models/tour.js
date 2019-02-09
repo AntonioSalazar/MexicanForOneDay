@@ -10,7 +10,7 @@ const tourSchema = new Schema({
   description: String,
   capacity: Number,
   author: { type : Schema.Types.ObjectId, ref: 'User' },
-  tips: String,  
+  tips: String,
   duration: {
     type: Number,
     min: 1
@@ -32,4 +32,3 @@ const tourSchema = new Schema({
 
 const Tour = mongoose.model("Tour", tourSchema);
 module.exports = Tour;
-
