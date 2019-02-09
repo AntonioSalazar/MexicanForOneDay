@@ -13,7 +13,7 @@ const bcrypt        = require("bcrypt");
 const passport      = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const flash         = require("connect-flash");
-const User          = require("./models/user");
+const User          = require("./models/user"); 
 const MongoStore    = require("connect-mongo")(session);
 
 
@@ -101,7 +101,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+// app.locals.title = 'Express - Generated with IronGenerator';
 
 
 

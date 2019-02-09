@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <section class="login">
   <div class="container-login">
     <div class="title_dasboard">
@@ -10,3 +11,29 @@
     </section>
   </div>
 </section>
+=======
+<div style="margin: 100px">
+  <h1>Own experiences</h1>
+  {{#each experiences}}
+    <img src="{{this.imgPath}}" alt="">
+    <h2>{{this.description}}</h2>
+    <h3>{{this.title}}</h3>
+
+    <div class="rating">
+      <p>Rate me!</p>
+      <div class="hearts">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+</div>
+
+
+
+    {{else}}
+    <h2>no experiences yet :(</h2>
+  {{/each}}
+</div>
+>>>>>>> 56c39ef613d65073468bb6518865c07e17bd7c89

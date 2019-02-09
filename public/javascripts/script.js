@@ -41,3 +41,12 @@
 //   const editP  = document.getElementById('editP')
 //   editP.addEventListener('submit', uploadProfile)
 // }
+
+window.onload = ()=>{
+  $( document ).ready(function() {
+    $('.heart').click(function(){
+      $(this).addClass('on');
+    });
+  });
+  
+}
