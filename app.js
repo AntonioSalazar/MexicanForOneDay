@@ -20,8 +20,8 @@ const MongoStore    = require("connect-mongo")(session);
 
 mongoose.Promise = Promise;
 mongoose
-  // .connect('mongodb://127.0.0.1/mexicanforoneday', {useNewUrlParser: true})
-  .connect(process.env.MONGODB, { useNewUrlParser: true })
+  .connect('mongodb://127.0.0.1/mexicanforoneday', {useNewUrlParser: true})
+  // .connect(process.env.MONGODB, { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -41,11 +41,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({
   secret: "scñaiewolxa",
-  cookie: { maxAge: 160000 },
-  resave: true,
+  cookie: { maxAge: 240000 },
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
-    ttl: 24 * 60 * 60 // 1 day
+    ttl: 14 * 24 * 60 * 60
   })
 }));
 

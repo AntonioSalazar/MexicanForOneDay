@@ -61,7 +61,6 @@ authRoutes.get("/login", (req, res, next) => {
 });
 
 authRoutes.post("/login", passport.authenticate("local", {
-  // successRedirect: "/private-page",
   successRedirect: "/dashboard",
   failureRedirect: "/login",
   failureFlash: true,

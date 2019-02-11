@@ -82,8 +82,8 @@ h1 {
   display: flex;
   font-family: Roboto;
   font-weight: 700;
-  color: #ffffff;
-  padding-top:30vh;
+  color: gray;
+  padding-top:10vh;
   margin-top: 0px;
   font-family:sans-serif;
   font-size: 48px;
@@ -93,7 +93,7 @@ h1 {
 h2 {
   display: flex;
   font-family: Roboto;
-  color: #ffffff;
+  color:gray;
   font-family:sans-serif;
   font-size:32px;
   font-weight: 100px;
@@ -348,7 +348,7 @@ h3 {
   justify-content: center;
   margin-bottom: 35px;
   flex-direction: column;
-  margin-top: 150px;
+  margin-top: 50px;
   text-align: center;
 }
 
@@ -413,22 +413,18 @@ h3 {
   color : #DE4549;
 }
 
-#own-experiences-div{
-  display: flex;
-  flex-direction: column;
-}
 
 #img-experience{
   width: 20%;
   height: 200px
 }
 
+#own-experience-div{
 
+}
 
 #experience-container{
-  margin: 100px;
-  display: flex;
-  flex-direction: column;
+
 }
 
 .error-message {

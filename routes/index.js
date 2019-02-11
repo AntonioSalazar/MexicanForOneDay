@@ -9,18 +9,13 @@ const uploadCloud = require('../config/cloudinary.js');
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-//   let isLoading= false
-
-//   setTimeout(function() {
-//     isLoading = true
-//   }, 1000)
-
   res.render('index');
 });
 
 router.get("/signup", (req, res, next ) =>{
   res.render("auth/signup")
 })
+
 
 router.get("/profile/edit", (req, res, next ) =>{
   let userId = req.query.user_id;
@@ -120,19 +115,30 @@ router.post('/reviews/add', (req, res, next) => {
   .catch(err => next(err))
 });
 
-router.get("/profile/:id", (req, res, next ) =>{
-  let userId = req.params.id;
-  if (!/^[0-9a-fA-F]{24}$/.test(userId)) { 
-    return res.status(404).render('not-found');
-  }
+router.get("/profile/:id", (req, res, next )=>{
+  let userId = req.params.id
+  console.log(userId);
   User.findOne({"_id": userId})
   .populate("author")
-  .then(user =>{
+  .then( user =>{
     res.render("profile", { user })
   })
   .catch(err => next(err))
-  
 })
+
+// router.get("/profile/:id", (req, res, next ) =>{
+//   let userId = req.params.id;
+//   console.log(userId);
+//   if (!/^[0-9a-fA-F]{24}$/.test(userId)) { 
+//     return res.status(404).render('not-found');
+//   }
+//   User.findOne({"_id": userId})
+//   .populate("author")
+//   .then(user =>{
+//     res.render("profile", { user })
+//   })
+//   .catch(err => next(err))
+// })
 
 router.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
   res.render("private", { user: req.user });

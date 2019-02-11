@@ -1,13 +1,8 @@
-{{!-- <div style="margin: 100px">
-  <h1>Own experiences</h1>
-  {{#each experiences}}
-    <img src="{{this.imgPath}}" alt="">
-    <h2>{{this.description}}</h2>
-    <h3>{{this.title}}</h3> --}}
+
 
 
 <div id="experience-container">
-  <h1>Own experiences</h1>
+  <h2 style="color: black">Own experiences</h2>
   {{#each tours}}
   <div id="own-experience-div">
       {{#ifCond tourType "experience" }}
@@ -26,8 +21,11 @@
     <a href="/experience/add">Añade tu propia experiencia:</a>
 </div>
 
+
+
+
 <div id="experience-container">
-  <h1>Group Tours</h1>
+  <h2 style="color: black">Group Tours</h2>
   {{#each tours}}
   <div id="own-experience-div">
       {{#ifCond tourType "groupTour" }}
@@ -47,7 +45,7 @@
 </div>
 
 <div id="experience-container">
-  <h1>Walking Tour</h1>
+  <h2 style="color: black">Walking Tour</h2>
   {{#each tours}}
   <div id="own-experience-div">
       {{#ifCond tourType "walkingTour" }}
