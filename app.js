@@ -1,4 +1,5 @@
-require('dotenv').config();
+// require('dotenv').config();
+require("dotenv").load();
 
 const bodyParser    = require('body-parser');
 const cookieParser  = require('cookie-parser');
@@ -41,6 +42,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({
   secret: "scñaiewolxa",
+  resave: true,
+  saveUninitialized: true,
   cookie: { maxAge: 240000 },
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
@@ -105,11 +108,6 @@ hbs.registerHelper('ifCond', function(v1, v2, options) {
   }
   return options.inverse(this);
 });
-
-// default value for title local
-// app.locals.title = 'Express - Generated with IronGenerator';
-
-
 
 const index = require('./routes/index');
 const authRoutes = require("./routes/auth-routes");
