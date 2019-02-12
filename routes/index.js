@@ -14,7 +14,13 @@ router.get('/', (req, res, next) => {
 
 
 router.get("/profile/edit", (req, res, next) =>{
-  res.render("profile-edit")
+  let userId = req.query.user_id
+  console.log(userId);
+  User.findOne({"_id": userId})
+  .then( user =>{
+    res.render("profile-edit", {user})
+  })
+  .catch(err => next(err))
 })
 
 router.post("/profile/edit", uploadCloud.single('photo'),(req, res, next ) =>{
@@ -110,7 +116,6 @@ router.post('/reviews/add', (req, res, next) => {
 
 router.get("/profile/:id", (req, res, next ) =>{
   let userId = req.params.id;
-  console.log(userId);
   if (!/^[0-9a-fA-F]{24}$/.test(userId)) { 
     return res.status(404).render('not-found');
   }
