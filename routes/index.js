@@ -15,7 +15,6 @@ router.get('/', (req, res, next) => {
 
 router.get("/profile/edit", (req, res, next) =>{
   let userId = req.query.user_id
-  console.log(userId);
   User.findOne({"_id": userId})
   .then( user =>{
     res.render("profile-edit", {user})
@@ -48,12 +47,21 @@ router.get("/dashboard", async(req, res, next ) =>{
   }
 })
 
+router.get("/search/dashboard/", (req, res, next )=>{
+  let tourTitle = req.query.title
+  Tour.findOne({"title": tourTitle})
+  .then(tour =>{
+    res.render("specific-search", { tour })
+  })
+  .catch(err => next(err))
+})
+
 router.post("/dashboard", uploadCloud.single("photo"), (req, res, next) =>{
-  const {title, descriptionPreview, description, duration, rate, capacity, tourType, comments, tips} = req.body
+  const {title, descriptionPreview, description, duration, rate, capacity, tourType, comments, tips, tourCategory} = req.body
   const user = req.user
   const imgPath = req.file.url;
   const imgName = req.file.originalname;
-  const newTour = new Tour({ title, descriptionPreview, description, duration, rate, imgPath, imgName, capacity, tourType, author: user.id, username: user.username, comments, tips})
+  const newTour = new Tour({ title, descriptionPreview, description, duration, rate, imgPath, imgName, capacity, tourType, author: user.id, username: user.username, comments, tips, tourCategory})
   newTour.save()
   .then(tour =>{
     res.redirect("/dashboard")
