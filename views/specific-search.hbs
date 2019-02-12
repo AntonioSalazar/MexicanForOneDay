@@ -1,2 +1,6 @@
 
-<h1>{{tour.title}}</h1>
+{{#if tour}}
+  <h1>{{tour.title}}</h1>
+  {{else}}
+  <span>We didnt find any tour matching your search, why dont you take a look at <a href="/dashboard">our available tours</a></span>
+{{/if}}
