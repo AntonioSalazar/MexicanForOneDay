@@ -217,6 +217,11 @@ input {
   text-align: center;
   border-style: none; }
 
+#title {
+  width: 900px;
+  color: white;
+  margin-left: 200px; }
+
 .card img {
   flex-direction: column;
   width: 200px; }
@@ -352,7 +357,8 @@ h3 {
   display: flex;
   flex-direction: column;
   margin-left: 90px;
-  width: 600px; }
+  width: 600px;
+  border-bottom: 1px solid; }
 
 #tour-section img {
   width: 200px;
@@ -380,5 +386,25 @@ h3 {
   display: flex;
   justify-content: center;
   margin-top: 40px; }
+
+#profile-info img {
+  width: 200px; }
+
+#img-name-desc {
+  width: 400px;
+  text-align: center;
+  border-style: solid;
+  border-radius: 4px;
+  margin-top: 5%;
+  margin-left: 35%;
+  border-width: 2px; }
+
+#extra-links {
+  margin-top: 2%;
+  margin-left: 45%;
+  margin-bottom: 2%; }
+
+#profile-edit {
+  margin: 50px 0px 100px 500px; }
 
 /*# sourceMappingURL=style.css.map */

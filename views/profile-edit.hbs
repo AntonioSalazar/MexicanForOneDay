@@ -1,22 +1,25 @@
 
-<div id="profile-edit">
-  <h2>Edit your info</h2>
+
+  <h2 style="margin: 20px 0px 0px 500px">Edit your info</h2>
   <form action="/profile/edit?user_id={{user._id}}" method="post" enctype="multipart/form-data">
-    <label for="name">Nombre:</label>
-    <input id="name" type="text" name="username" value="{{user.username}}" placeholder="{{user.username}}">
-      <br>
-    <label for="description">Bio</label>
-    <input id="description" type="text" name="description" placeholder="Algo sobre ti...">
-      <br>
-    <label for="email">Email:</label>
-    <input id="email" type="text" name="email" value="{{user.email}}" placeholder="{{user.email}}">
+    <div id="profile-edit">
+      <label for="name">Nombre:</label>
+      <input id="name" type="text" name="username" value="{{user.username}}" placeholder="{{user.username}}">
         <br>
-    <label for="password">Password:</label>
-    <input id="password" type="password" name="password" value="" placeholder="Password" required>
-      <br>
-    <label>Photo</label>
-    <input type="file" name="photo">
-      <br>
-    <input type="submit" value="SAVE">
+        <br>
+      <label for="description">Bio</label>
+      <input id="description" type="text" name="description" placeholder="Algo sobre ti...">
+        <br>
+      <label for="email">Email:</label>
+      <input id="email" type="text" name="email" value="{{user.email}}" placeholder="{{user.email}}">
+          <br>
+      <label for="password">Password:</label>
+      <input id="password" type="password" name="password" value="" placeholder="Password" required>
+        <br>
+      <label>Photo</label>
+      <input type="file" name="photo">
+        <br>
+      <input type="submit" class="btn btn-red" value="SAVE">
+    </div> 
   </form>
 </div>

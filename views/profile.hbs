@@ -1,11 +1,16 @@
-<div >
-    <img src="{{user.imgPath}}" alt="" id="custom-user-img">
-    <h1>{{user.username}}</h1>
-    <h2>{{user.description}}</h2>
+<div id="profile-info">
+    <div id="img-name-desc">
+      <img src="{{user.imgPath}}" alt="" id="custom-user-img">
+      <h1>{{user.username}}</h1>
+        <br>
+      <h4>{{user.description}}</h4>
+    </div>
   <br>
-  <a href="/profile/edit?user_id={{user._id}}">Edita tu perfil</a>
-    <br>
-  <a href="/dashboard">Menu principal</a>
-    <br>
-  <a href="/logout">Cerrar sesion</a>
+  <div id="extra-links">
+    <a href="/profile/edit?user_id={{user._id}}">Edita tu perfil</a>
+      <br>
+    <a href="/dashboard">Menu principal</a>
+      <br>
+    <a href="/logout">Cerrar sesion</a>
+  </div>
 </div>
