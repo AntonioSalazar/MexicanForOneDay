@@ -376,4 +376,9 @@ h3 {
 .dashboard-title {
   margin: 50px 0px 0px 200px; }
 
+#profile {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px; }
+
 /*# sourceMappingURL=style.css.map */
