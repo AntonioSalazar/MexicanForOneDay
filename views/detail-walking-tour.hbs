@@ -27,10 +27,12 @@
     <button type="submit">Publicar</button> 
     </form>
   <h2>Reviews</h2>
-    {{#each tour.reviews}}
-    <div>
-      <p>{{this.comments}}</p>
-      <span>{{this.user}}</span>
-    </div>
-    {{/each}}
+  {{#each tour.reviews}}
+  <div class="review-item">
+    <h4>{{this.user}}</h4>
+    <h5>{{this.comments}}</h5>
+  </div>
+  {{else}}
+    <h4>No comments yet</h4>
+  {{/each}}
 </div>

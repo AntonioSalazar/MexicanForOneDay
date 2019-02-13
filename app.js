@@ -11,7 +11,7 @@ const mongoose      = require('mongoose');
 const logger        = require('morgan');
 const path          = require('path');
 const session       = require("express-session");
-const bcrypt        = require("bcryptjs");
+const bcrypt        = require("bcrypt");
 const passport      = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const flash         = require("connect-flash");
@@ -21,8 +21,8 @@ const MongoStore    = require("connect-mongo")(session);
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://127.0.0.1/mexicanforoneday', {useNewUrlParser: true})
-  // .connect(process.env.MONGODB, { useNewUrlParser: true })
+  // .connect('mongodb://127.0.0.1/mexicanforoneday', {useNewUrlParser: true})
+  .connect(process.env.MONGODB, { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -44,7 +44,7 @@ app.use(session({
   secret: "scñaiewolxa",
   resave: true,
   saveUninitialized: true,
-  cookie: { maxAge: 240000 },
+  cookie: {maxAge: 1000 * 60 * 60 * 24 * 7 },
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
     ttl: 14 * 24 * 60 * 60

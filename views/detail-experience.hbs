@@ -26,16 +26,17 @@
     <textarea type="text" name="comments"></textarea>
 
     <button type="submit">Publicar</button>
-    
-    <h2>Reviews</h2>
+
     
   </form>
-{{!--   
-    {{#each-in tour.reviews as |a b|}}
-      {{a}}
-      <hr>
-      {{#each tourId as |data|}}
-        {{data}}.{{data}} ----
-      {{/each}}
-    {{/each}} --}}
+
+  <h2>Reviews</h2>
+  {{#each tour.reviews}}
+  <div class="review-item">
+    <h4>{{this.user}}</h4>
+    <h5>{{this.comments}}</h5>
+  </div>
+  {{else}}
+    <h4>No comments yet</h4>
+  {{/each}}
 </div>

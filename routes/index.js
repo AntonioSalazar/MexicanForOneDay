@@ -2,7 +2,7 @@ const express     = require('express');
 const router      = express.Router();
 const User        = require("../models/user");
 const Tour        = require("../models/tour");
-const bcrypt      = require("bcryptjs");
+const bcrypt      = require("bcrypt");
 const bcryptSalt  = 10;
 const ensureLogin = require("connect-ensure-login");
 const uploadCloud = require('../config/cloudinary.js');
@@ -88,7 +88,9 @@ router.get("/detail_experience/:id", (req, res, next ) =>{
   let tourId = req.params.id
   Tour.findOne({"_id": tourId})
   .then(tour =>{
-    res.render("detail-experience", {tour})
+    let comments = tour.reviews;
+    console.log(comments)
+    res.render("detail-experience", {tour, comments})
   })
   .catch(err => next(err))
 })
