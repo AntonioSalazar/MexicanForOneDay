@@ -16,10 +16,11 @@ const tourSchema = new Schema({
     min: 1
   },
   rate: Number,
-  reviews: {
+  reviews: [
+    {
     user: String,
     comments: String
-  },
+  }],
   tourCategory:{
     type: [String],
     enum: ["museum", "culture", "entertainment", "gastronomy", "archeology", "architecture"]

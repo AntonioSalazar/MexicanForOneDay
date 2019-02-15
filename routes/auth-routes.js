@@ -61,7 +61,6 @@ authRoutes.get("/login", (req, res, next) => {
 });
 
 authRoutes.post("/login", passport.authenticate("local", {
-  // successRedirect: "/private-page",
   successRedirect: "/dashboard",
   failureRedirect: "/login",
   failureFlash: true,
@@ -73,7 +72,7 @@ authRoutes.get("/logout", (req, res) => {
   res.redirect("/login");
 });
 
-authRoutes.get("/dashboard", ensureLogin.ensureLoggedIn(), (req, res) => {
+authRoutes.get("/detail-experience" && "/detail-group-tour" && "/detail-walking-tour", ensureLogin.ensureLoggedIn(), (req, res) => {
   res.render("private", { user: req.user });
 });
 module.exports = authRoutes;

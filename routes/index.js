@@ -9,26 +9,17 @@ const uploadCloud = require('../config/cloudinary.js');
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-//   let isLoading= false
-
-//   setTimeout(function() {
-//     isLoading = true
-//   }, 1000)
-
   res.render('index');
 });
 
-router.get("/signup", (req, res, next ) =>{
-  res.render("auth/signup")
-})
 
-router.get("/profile/edit", (req, res, next ) =>{
-  let userId = req.query.user_id;
+router.get("/profile/edit", (req, res, next) =>{
+  let userId = req.query.user_id
   User.findOne({"_id": userId})
   .then( user =>{
-    res.render("profile-edit", { user })
+    res.render("profile-edit", {user})
   })
-  .catch( err => next( err ))
+  .catch(err => next(err))
 })
 
 router.post("/profile/edit", uploadCloud.single('photo'),(req, res, next ) =>{
@@ -47,21 +38,30 @@ router.post("/profile/edit", uploadCloud.single('photo'),(req, res, next ) =>{
 
 router.get("/dashboard", async(req, res, next ) =>{
   try{
+    const user = req.user
     const tours = await(Tour.find())
-    res.render("dashboard", {tours})
+    res.render("dashboard", {tours, user})
   }
   catch (err){
     next(err)
   }
 })
 
+router.get("/search/dashboard/", (req, res, next )=>{
+  let tourTitle = req.query.title
+  Tour.findOne({"title": tourTitle})
+  .then(tour =>{
+    res.render("specific-search", { tour })
+  })
+  .catch(err => next(err))
+})
+
 router.post("/dashboard", uploadCloud.single("photo"), (req, res, next) =>{
-  const {title, descriptionPreview, description, duration, rate, capacity, tourType, comments, tips} = req.body
+  const {title, descriptionPreview, description, duration, rate, capacity, tourType, comments, tips, tourCategory} = req.body
   const user = req.user
-  console.log(user);
   const imgPath = req.file.url;
   const imgName = req.file.originalname;
-  const newTour = new Tour({ title, descriptionPreview, description, duration, rate, imgPath, imgName, capacity, tourType, author: user.id, username: user.username, comments, tips})
+  const newTour = new Tour({ title, descriptionPreview, description, duration, rate, imgPath, imgName, capacity, tourType, author: user.id, username: user.username, comments, tips, tourCategory})
   newTour.save()
   .then(tour =>{
     res.redirect("/dashboard")
@@ -82,11 +82,15 @@ router.get("/walking_tour/add", (req, res, next ) =>{
   res.render("walking-tour-add")
 })
 
+
+
 router.get("/detail_experience/:id", (req, res, next ) =>{
   let tourId = req.params.id
   Tour.findOne({"_id": tourId})
   .then(tour =>{
-    res.render("detail-experience", {tour})
+    let comments = tour.reviews;
+    console.log(comments)
+    res.render("detail-experience", {tour, comments})
   })
   .catch(err => next(err))
 })
@@ -131,10 +135,9 @@ router.get("/profile/:id", (req, res, next ) =>{
     res.render("profile", { user })
   })
   .catch(err => next(err))
-  
 })
 
-router.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
+router.get("/detail-experience" && "/detail-group-tour" && "/detail-walking-tour", ensureLogin.ensureLoggedIn(), (req, res) => {
   res.render("private", { user: req.user });
 });
 

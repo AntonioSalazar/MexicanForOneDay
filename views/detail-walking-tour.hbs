@@ -1,4 +1,5 @@
 <div style="margin: 100px">
+  <img src="{{walkingTour.imgPath}}" alt="">
   {{walkingTour.title}}
     <br>
   {{walkingTour.username}}
@@ -9,13 +10,9 @@
     <br>
   <p>La duracion aproximada del tour es de: {{walkingTour.duration}} horas</p>
     <br>
-  <p>Some tips</p>
-    <br>
+  <p style="color: black">Some tips</p>
   {{walkingTour.tips}}
     <br>
-  Imagenes:
-    <br>
-  <img src="{{walkingTour.imgPath}}" alt="">
   <p>Deja un comentario: </p>
   <form action="/reviews/add?tour_id={{walkingTour._id}}" method="post">
     <label for="">Usuario:</label>
@@ -27,10 +24,12 @@
     <button type="submit">Publicar</button> 
     </form>
   <h2>Reviews</h2>
-    {{#each tour.reviews}}
-    <div>
-      <p>{{this.comments}}</p>
-      <span>{{this.user}}</span>
-    </div>
-    {{/each}}
+  {{#each tour.reviews}}
+  <div class="review-item">
+    <h4>{{this.user}}</h4>
+    <h5>{{this.comments}}</h5>
+  </div>
+  {{else}}
+    <h4>No comments yet</h4>
+  {{/each}}
 </div>

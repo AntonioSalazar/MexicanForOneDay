@@ -1,4 +1,6 @@
 <div style="margin: 100px">
+  <img src="{{groupTour.imgPath}}" alt="">
+    <br>
   {{groupTour.title}}
     <br>
   {{groupTour.username}}
@@ -13,9 +15,6 @@
     <br>
   {{groupTour.tips}}
     <br>
-  Imagenes:
-    <br>
-  <img src="{{groupTour.imgPath}}" alt="">
 
   <p>Deja un comentario: </p>
   <form action="/reviews/add?tour_id={{groupTour._id}}" method="post">
@@ -29,10 +28,12 @@
   </form>
     
   <h2>Reviews</h2>
-    {{#each tour.reviews}}
-    <div>
-      <p>{{this.comments}}</p>
-      <span>{{this.user}}</span>
-    </div>
-    {{/each}}
+  {{#each tour.reviews}}
+  <div class="review-item">
+    <h4>{{this.user}}</h4>
+    <h5>{{this.comments}}</h5>
+  </div>
+  {{else}}
+    <h4>No comments yet</h4>
+  {{/each}}
 </div>
