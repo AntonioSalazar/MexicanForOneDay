@@ -4,31 +4,22 @@
   font-family: "mexcellent";
   src: url("../fonts/Mexcellent.ttf")
 }
-
-
-
-nav{
-  background: #000000;
+nav {
   display: flex;
+  background: #000000;
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  height: 65px;
 }
-
 nav img {
   padding-left: 5%;
   padding-right: 60%;
-
 }
-
-
 .main_link {
   padding-top: 17px;
   padding-right: 18px;
-
-.main_link {
-  position: absolute;
-  top: 15%;
-  left: 70%;
 }
-
 .main_link a{
   font-size: 20px;
   color:#DE4549;
@@ -36,7 +27,6 @@ nav img {
   font-weight: bolder;
   padding-top: 20px;
 }
-
 ul {
   list-style: none;
   display: inline-flex;
@@ -48,23 +38,19 @@ ul {
   margin-top: 20px;
   padding-left: 780px;
 }
-
 ul a{
   text-decoration: none;
   color: #ffffff;
 }
-
 li{
   padding-right: 24px;
 }
-
 .stage{
   display: flex;
   background-image: url("../images/home-stage.jpg");
   width: 100vw;
   height:600px;
   background-size: cover;
-
 }
 .stage h1{
  display:flex;
@@ -72,7 +58,6 @@ li{
  padding-left: 12%;
  padding-top: 20%;
 }
-
 h1 {
   display: flex;
   font-family: Roboto;
@@ -84,7 +69,6 @@ h1 {
   font-size: 48px;
   font-weight: 100px;
 }
-
 h2 {
   display: flex;
   font-family: Roboto;
@@ -93,7 +77,6 @@ h2 {
   font-size:32px;
   font-weight: 100px;
 }
-
 p {
     display: flex;
     font-family: Roboto;
@@ -103,7 +86,6 @@ p {
     font-size:24px;
     font-weight: 100px;
 }
-
 label {
   display: flex;
   font-family: Roboto;
@@ -112,46 +94,37 @@ label {
   color: #4A4A4A;
   padding-top: 24px;
 }
-
 input{
    width: 400px;
    height: 56px;
  }
-
  .input-comp{
    margin-top: 25px
  }
-
  .dropdown {
    width: 400px;
    height: 56px;
  }
-
 .button{
-  position: absolute;
-  top: 14%;
-  left: 75%;
+  padding-top: 12px;
+  padding-right: 24px;
 }
-
 .btn{
   color:#ffffff;
   background-color: none;
   border-color: none;
 }
-
 .btn-primary {
   width: 200px;
   height: 40px;
   background-color: #DE4549;
   border-radius:90px;
 }
-
 .btn-secondary {
   color: #DE4549;
   background-color: none;
   border-color: none;
 }
-
 .btn-third{
   background-color: #f7f7f7;
   border-color: none;
@@ -161,60 +134,50 @@ input{
   color:#4a4a4a;
   padding-top: 19px;
 }
-
 .boton_index{
   margin-top: 40px;
 }
-
 .btn-stage {
   width: 200px;
   height: 40px;
   background-color: #DE4549;
   border-radius:90px;
 }
-
 .first-section {
   width: 100vw;
   height:600px;
 }
-
 .first-section-inside{
   display: inline-flex;
   width: 100vw;
   margin-top: 90px;
 }
-
 .first-section-1 {
   display: inline-flex;
   width: 50vw;
   height:600px;
 }
-
 .first-section-2 {
   display: inline-flex;
   width: 50vw;
   height:600px;
   text-align: center;
 }
-
 .second-section {
   display: inline-flex;
   width: 100vw;
   height:420px;
   background-color: #DE4549;
 }
-
 .second-section-inside{
   display: inline-flex;
   width: 100vw;
 }
-
 .second-section-2 {
   display: flex;
   width: 50vw;
   height:420px;
 }
-
 .card-2{
   display: inline-flex;
   width: 33%;
@@ -223,32 +186,25 @@ input{
   text-align: center;
   border-style: none;
 }
-
 .img-lady{
   width: 100vw;
   height:420px;
 }
-
-
-
 .formulario{
   display: flex;
   text-align: center;
   margin-left: 32%;
 }
-
 .third-section {
   display: flex;
   width: 100vw;
   height:600px;
 }
-
 .third-section-inside {
   display: inline-flex;
   width: 100vw;
   margin-top: 90px;
 }
-
 .card2{
   flex-direction: column;
   width: 100%;
@@ -258,7 +214,6 @@ input{
   margin-top: 48px;
   border-style: none;
 }
-
 .card{
   flex-direction: column;
   width: 33%;
@@ -268,12 +223,10 @@ input{
   text-align: center;
   border-style: none;
 }
-
 .card img{
   flex-direction: column;
   width: 200px;
 }
-
 .card h2 {
   padding-top: 40px;
   flex-direction: column;
@@ -281,33 +234,28 @@ input{
   font-weight: 700;
   color: #DE4549;
 }
-
 .card p {
   display: center;
   font-size: 18px;
   font-weight: lighter;
   color:black;
 }
-
 .card2 h2{
   font-size: 32px;
   font-weight: 700;
   padding-bottom: 20px;
 }
-
 .card2 p {
   display: flex;
   font-size: 24px;
   font-weight: lighter;
   padding-bottom: 24px;
 }
-
 footer {
   display: flex;
   height: 15vw;
   background-color: #000000;
 }
-
 footer img {
   display: flex;
   text-align: center;
@@ -316,7 +264,6 @@ footer img {
   margin-top: 50px;
   margin-left:50%;
 }
-
 .login{
   display: flex;
   justify-content: center;
@@ -325,20 +272,17 @@ footer img {
   height: 100%;
   border-radius: 20px;
 }
-
 .container-login{
   justify-content: center;
   flex-direction: column;
   text-align: center;
 }
-
 h3 {
   justify-content: center;
   flex-direction: column;
   text-align: center;
   font-size: 2.5rem;
 }
-
 .title {
   flex-direction: column;
   justify-content: center;
@@ -347,14 +291,12 @@ h3 {
   margin-top: 150px;
   text-align: center;
 }
-
 .title p {
   justify-content: center;
   flex-direction: column;
   color: #4d4d4d;
   text-align: center;
 }
-
 .btn-red {
   width: 400px;
   height: 56px;
@@ -364,19 +306,13 @@ h3 {
   padding-top: 15px;
   margin-bottom: 30px;
 }
-
-
-
-
 .link {
   flex-direction: column;
   justify-content: center;
   margin-bottom: 50px;
   flex-direction: column;
   text-align: center;
-
 }
-
 .link a {
   flex-direction: column;
   justify-content: center;
@@ -386,14 +322,11 @@ h3 {
   text-align: center;
   color : #DE4549;
 }
-
-
 .link2 {
   display: inline-flex;
   margin-bottom: 35px;
   margin-top: 50px;
 }
-
 .link2 p {
   display: inline-flex;
   font-size: 18px;
@@ -401,14 +334,12 @@ h3 {
   color : #000000;
   padding-right: 10px;
 }
-
 .link2 a {
   flex-direction: column;
   justify-content: center;
   flex-direction: column;
   color : #DE4549;
 }
-
 #own-experience-div {
   display: inline-flex;;
   flex-direction: column;
@@ -416,28 +347,19 @@ h3 {
   padding-left: 5%;
   height: 400px;
 }
-
-
-
 #img-experience{
   width: 100%;
   height: 200px
 }
-
-
-
 #experience-container{
   display: flex;
   flex-direction: column;
 }
-
-
 #experience-container h1{
   color : black;
   font-size: 2rem;
   padding-top: 24vh;
 }
-
 #texto {
   padding-top: 20px;
   width: 100%;
@@ -445,23 +367,17 @@ h3 {
   font-family: Roboto;
   font-weight: 100;
 }
-
 #texto h3 {
   font-size:1.8rem;
   color:#DE4549;
   font-family: Roboto;
   font-weight: 800;
   text-align: left;
-
 }
-
 #card-container_ {
   height: 800px;
 }
-
-
 h4 {
   font-size: 1.4rem;
   color: #DE4549;
-}
 }
