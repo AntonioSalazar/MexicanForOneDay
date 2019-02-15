@@ -1,4 +1,6 @@
 <div style="margin: 100px">
+  <img src="{{groupTour.imgPath}}" alt="">
+    <br>
   {{groupTour.title}}
     <br>
   {{groupTour.username}}
@@ -13,9 +15,6 @@
     <br>
   {{groupTour.tips}}
     <br>
-  Imagenes:
-    <br>
-  <img src="{{groupTour.imgPath}}" alt="">
 
   <p>Deja un comentario: </p>
   <form action="/reviews/add?tour_id={{groupTour._id}}" method="post">

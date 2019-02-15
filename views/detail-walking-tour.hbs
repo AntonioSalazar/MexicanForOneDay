@@ -1,4 +1,5 @@
 <div style="margin: 100px">
+  <img src="{{walkingTour.imgPath}}" alt="">
   {{walkingTour.title}}
     <br>
   {{walkingTour.username}}
@@ -10,12 +11,8 @@
   <p>La duracion aproximada del tour es de: {{walkingTour.duration}} horas</p>
     <br>
   <p style="color: black">Some tips</p>
-    <br>
   {{walkingTour.tips}}
     <br>
-  Imagenes:
-    <br>
-  <img src="{{walkingTour.imgPath}}" alt="">
   <p>Deja un comentario: </p>
   <form action="/reviews/add?tour_id={{walkingTour._id}}" method="post">
     <label for="">Usuario:</label>

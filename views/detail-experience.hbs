@@ -1,4 +1,6 @@
 <div style="margin: 100px">
+  <img src="{{tour.imgPath}}" alt="">
+    <br>
   {{tour.title}}
     <br>
   {{tour.username}}
@@ -13,9 +15,6 @@
     <br>
   {{tour.tips}}
     <br>
-  Imagenes:
-    <br>
-  <img src="{{tour.imgPath}}" alt="">
 
   <p>Deja un comentario: </p>
   <form action="/reviews/add?tour_id={{tour._id}}" method="post">

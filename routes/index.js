@@ -137,7 +137,7 @@ router.get("/profile/:id", (req, res, next ) =>{
   .catch(err => next(err))
 })
 
-router.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
+router.get("/detail-experience" && "/detail-group-tour" && "/detail-walking-tour", ensureLogin.ensureLoggedIn(), (req, res) => {
   res.render("private", { user: req.user });
 });
 

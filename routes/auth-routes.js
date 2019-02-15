@@ -72,7 +72,7 @@ authRoutes.get("/logout", (req, res) => {
   res.redirect("/login");
 });
 
-authRoutes.get("/dashboard", ensureLogin.ensureLoggedIn(), (req, res) => {
+authRoutes.get("/detail-experience" && "/detail-group-tour" && "/detail-walking-tour", ensureLogin.ensureLoggedIn(), (req, res) => {
   res.render("private", { user: req.user });
 });
 module.exports = authRoutes;
