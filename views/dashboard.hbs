@@ -1,84 +1,90 @@
-
-
 <div id="profile">
   <a href="/profile/{{user._id}}"><img src="../images/outline_account_circle_black_18dp.png" alt=""> Profile</a>
 </div>
-<div>
-  <h2 class="dashboard-title">Own experiences</h2>
-  {{#each tours}}
-      {{#ifCond tourType "experience" }}
-      <div id="tour-section">
+<section class="father_conteiner">
+  <section class="main_container">
+    <div class="row_container_text">
+        <h2 class="dashboard-title">Own experiences</h2>
+        <div id="add-something">
+          <a href="/experience/add">Añade tu propia experiencia > </a>
+        </div>
+      </div>
+      <section class="row_container">
+        {{#each tours}}
+        {{#ifCond tourType "experience" }}
+        <div id="tour-section">
           <img src="{{this.imgPath}}" alt="">
           <div id="tour-details">
-            <a href="/detail_experience/{{this._id}}">
-
-            <h6>{{this.descriptionPreview}}</h6>
+          <a href="/detail_experience/{{this._id}}">
             <h4>{{this.title}}</h4>
-            <h4>Calificacion: {{this.rate}}</h4>
-
-            </a>
+            <h6>{{this.descriptionPreview}}</h6>
+            <h5>Calificacion: {{this.rate}}</h5>
+          </a>
           </div>
-        
-      </div>
-      {{/ifCond}}
-
-      {{else}}
+        </div>
+        {{/ifCond}}
+        {{else}}
         <h2>No experieces yet :(</h2>
-  
-  <br>
-  {{/each}}
-  <div id="add-something">
-    <a href="/experience/add">Añade tu propia experiencia:</a>
-  </div>
-</div>
-
-
-
-
-<div id="experience-container">
-  <h2 class="dashboard-title">Group Tours</h2>
-  {{#each tours}}
-      {{#ifCond tourType "groupTour" }}
-      <div id="tour-section">
+        <br>
+        {{/each}}
+      </section>
+    </section>
+</section>
+<section class="father_conteiner_2">
+  <section class="main_container">
+    <div class="row_container_text">
+        <h2 class="dashboard-title">Group Tours</h2>
+        <div id="add-something">
+          <a href="/experience/add">Añade tu propio tour > </a>
+        </div>
+      </div>
+      <section class="row_container">
+        {{#each tours}}
+        {{#ifCond tourType "groupTour" }}
+        <div id="tour-section">
           <img src="{{this.imgPath}}" alt="">
           <div id="tour-details">
-            <a href="/detail_experience/{{this._id}}">
-            <h6>{{this.descriptionPreview}}</h6>
+          <a href="/detail_experience/{{this._id}}">
             <h4>{{this.title}}</h4>
-            <h4>Calificacion: {{this.rate}}</h4>
-            </a>
-          </div>      
+            <h6>{{this.descriptionPreview}}</h6>
+            <h5>Calificacion: {{this.rate}}</h5>
+          </a>
+          </div>
+        </div>
+        {{/ifCond}}
+        {{else}}
+        <h2>No Group tours yet :(</h2>
+        <br>
+        {{/each}}
+      </section>
+    </section>
+</section>
+<section class="father_conteiner_3">
+  <section class="main_container">
+    <div class="row_container_text">
+        <h2 class="dashboard-title">Walking Tours</h2>
+        <div id="add-something">
+          <a href="/experience/add">Añade tu propio walking tour > </a>
+        </div>
       </div>
-      {{/ifCond}}
-      {{else}}
-        <h2>No group Tours yet :(</h2>
-  <br>
-  {{/each}}
-  <div id="add-something">
-    <a href="/group_tour/add">Añade tu propio tour:</a>
-  </div>
-</div>
-
-<div id="experience-container">
-  <h2 class="dashboard-title">Walking Tour</h2>
-  {{#each tours}}
-      {{#ifCond tourType "walkingTour" }}
-      <div id="tour-section">
+      <section class="row_container">
+        {{#each tours}}
+        {{#ifCond tourType "walkingTour" }}
+        <div id="tour-section">
           <img src="{{this.imgPath}}" alt="">
           <div id="tour-details">
-            <a href="/detail_experience/{{this._id}}">
-            <h6>{{this.descriptionPreview}}</h6>
+          <a href="/detail_experience/{{this._id}}">
             <h4>{{this.title}}</h4>
-            <h4>Calificacion: {{this.rate}}</h4>
-            </a>
-          </div> 
-      </div>
-      {{/ifCond}}
-      {{else}}
-        <h2>No walking tour yet :(</h2>
-  <br>
-  {{/each}}
-  <div id="add-something" >
-    <a href="/walking_tour/add" style="margin-top: 40px">Añade tu propio tour:</a>
-  </div>
-</div>
+            <h6>{{this.descriptionPreview}}</h6>
+            <h5>Calificacion: {{this.rate}}</h5>
+          </a>
+          </div>
+        </div>
+        {{/ifCond}}
+        {{else}}
+        <h2>No Group walking tours yet :(</h2>
+        <br>
+        {{/each}}
+      </section>
+    </section>
+</section>

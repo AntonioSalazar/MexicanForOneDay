@@ -13,15 +13,14 @@ nav {
   margin-left: 55%; }
 
 .main_link {
-  position: absolute;
-  top: 15%;
+  padding-top: 2%;
   left: 70%; }
 
 .main_link a {
   font-size: 20px;
-  color: #DE4549;
+  color: #ffffff;
   font-family: Roboto;
-  font-weight: bolder;
+  font-weight: 700;
   padding-top: 20px; }
 
 ul {
@@ -44,16 +43,34 @@ li {
 
 .stage {
   display: flex;
-  background-image: url("../images/home-stage.jpg");
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/bellas_artes_home.jpg");
   width: 100vw;
   height: 600px;
   background-size: cover; }
 
+.stage_text {
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 60vw;
+  height: 400px; }
+
 .stage h1 {
+  justify-content: center;
   display: flex;
   text-align: center;
-  padding-left: 12%;
-  padding-top: 20%; }
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #000000; }
+
+.stage_post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 400px;
+  background-size: cover; }
 
 h1 {
   display: flex;
@@ -72,6 +89,104 @@ h2 {
   font-size: 32px;
   font-weight: 100px; }
 
+.father_conteiner h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 3%;
+  padding-top: 2%;
+  padding-bottom: 6px;
+  padding-right: 890px; }
+
+.father_conteiner_2 h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 3%;
+  padding-top: 2%;
+  padding-bottom: 6px;
+  padding-right: 1024px; }
+
+.father_conteiner_3 h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 3%;
+  padding-top: 2%;
+  padding-bottom: 6px;
+  padding-right: 930px; }
+
+.father_conteiner_3 a {
+  color: #DE4549; }
+
+.father_conteiner a {
+  color: #DE4549; }
+
+.father_conteiner_2 a {
+  color: #DE4549; }
+
+textarea {
+  width: 80%;
+  height: 200px;
+  border-radius: 4px;
+  border-color: #eaeaea; }
+
+.post_1 input {
+  width: 80%; }
+
+.post_1 {
+  display: flex;
+  width: 100vw;
+  height: 600px;
+  justify-content: center;
+  height: 100%; }
+
+.post_inside {
+  flex-direction: column;
+  justify-content: center; }
+
+.post_content {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  width: 40vw;
+  margin-bottom: 10%; }
+
+.post_content2 {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  width: 40vw;
+  margin-bottom: 10%; }
+
+.post_1 p {
+  font-size: 20px;
+  font-weight: 100px; }
+
+.post_1 h6 {
+  color: #4d4d4d;
+  font-size: 1.3rem;
+  font-weight: 200; }
+
+.post_1 h2 {
+  font-size: 32px;
+  color: #DE4549;
+  padding-top: 3%;
+  font-weight: 800; }
+
+.post_1 h5 {
+  font-size: 24px;
+  color: #DE4549;
+  font-weight: 300; }
+
+.post_1 h4 {
+  font-size: 18px;
+  color: #4d4d4d;
+  font-weight: 400; }
+
+.post_1 h3 {
+  font-size: 18px;
+  color: #0B99AC;
+  font-weight: 400;
+  text-align: left; }
+
 p {
   display: flex;
   font-family: Roboto;
@@ -81,7 +196,6 @@ p {
   font-weight: 100px; }
 
 label {
-  display: flex;
   font-family: Roboto;
   font-weight: 500;
   font-size: 18px;
@@ -99,9 +213,9 @@ input {
   height: 56px; }
 
 .button {
-  position: absolute;
   top: 14%;
-  left: 75%; }
+  left: 75%;
+  padding-top: 5%; }
 
 .btn {
   color: #ffffff;
@@ -109,10 +223,12 @@ input {
   border-color: none; }
 
 .btn-primary {
-  width: 200px;
-  height: 40px;
+  width: 300px;
+  height: 56px;
   background-color: #DE4549;
-  border-radius: 90px; }
+  border-radius: 90px;
+  padding-top: 12px;
+  font-size: 1.2rem; }
 
 .btn-secondary {
   color: #DE4549;
@@ -129,7 +245,7 @@ input {
   padding-top: 19px; }
 
 .boton_index {
-  margin-top: 24px; }
+  margin-top: 10px; }
 
 .btn-stage {
   width: 200px;
@@ -186,7 +302,6 @@ input {
 
 .formulario {
   display: flex;
-  text-align: center;
   margin-left: 32%; }
 
 .third-section {
@@ -217,11 +332,6 @@ input {
   text-align: center;
   border-style: none; }
 
-#title {
-  width: 900px;
-  color: white;
-  margin-left: 200px; }
-
 .card img {
   flex-direction: column;
   width: 200px; }
@@ -237,18 +347,20 @@ input {
   display: center;
   font-size: 18px;
   font-weight: lighter;
-  color: black; }
+  color: #000000; }
 
 .card2 h2 {
   font-size: 32px;
   font-weight: 700;
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  color: #ffffff; }
 
 .card2 p {
   display: flex;
   font-size: 24px;
   font-weight: lighter;
-  padding-bottom: 24px; }
+  padding-bottom: 24px;
+  color: #ffffff; }
 
 footer {
   display: flex;
@@ -263,6 +375,17 @@ footer img {
   margin-top: 50px;
   margin-left: 50%; }
 
+.master {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px; }
+
+.master_2 {
+  justify-content: center;
+  align-items: center;
+  margin-left: 35%; }
+
 .login {
   display: flex;
   justify-content: center;
@@ -271,10 +394,42 @@ footer img {
   height: 100%;
   border-radius: 20px; }
 
-.container-login {
+.principal_conteiner {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%; }
+
+.master p {
+  text-align: center; }
+
+.form_card {
   justify-content: center;
   flex-direction: column;
-  text-align: center; }
+  height: 100%; }
+
+.separacion {
+  margin-bottom: 30px;
+  display: inline-flex;
+  margin-top: 30px; }
+
+.form_card h3 {
+  margin-top: 10px; }
+
+.container-login {
+  justify-content: center;
+  flex-direction: column; }
+
+.container-login2 {
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 100px; }
+
+.container-login3 {
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 100px; }
 
 h3 {
   justify-content: center;
@@ -285,10 +440,10 @@ h3 {
 .title {
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 35px;
+  margin-bottom: 10px;
   flex-direction: column;
-  margin-top: 50px;
-  text-align: center; }
+  text-align: center;
+  margin-top: 50px; }
 
 .title p {
   justify-content: center;
@@ -296,14 +451,23 @@ h3 {
   color: #4d4d4d;
   text-align: center; }
 
+.checkbox {
+  width: 18px;
+  height: 18px;
+  margin-left: 20px; }
+
 .btn-red {
   width: 400px;
   height: 56px;
   background-color: #DE4549;
   border-radius: 90px;
   margin-top: 40px;
-  padding-top: 15px;
+  padding-top: 4px;
   margin-bottom: 30px; }
+
+.form-signup {
+  display: flex;
+  text-align: center; }
 
 .link {
   flex-direction: column;
@@ -324,7 +488,8 @@ h3 {
 .link2 {
   display: inline-flex;
   margin-bottom: 35px;
-  margin-top: 50px; }
+  margin-top: 50px;
+  margin-left: 50px; }
 
 .link2 p {
   display: inline-flex;
@@ -332,6 +497,24 @@ h3 {
   text-align: center;
   color: #000000;
   padding-right: 10px; }
+
+.link3 p {
+  display: inline-flex;
+  font-size: 18px;
+  text-align: center;
+  color: #000000;
+  padding-right: 10px; }
+
+.link3 {
+  display: inline-flex;
+  margin-bottom: 24%;
+  margin-left: 70px; }
+
+.link3 a {
+  flex-direction: column;
+  justify-content: center;
+  flex-direction: column;
+  color: #DE4549; }
 
 .link2 a {
   flex-direction: column;
@@ -347,22 +530,79 @@ h3 {
   padding: 20px;
   width: 100%; }
 
-#tour-section {
+.father_conteiner {
   display: flex;
-  flex-direction: row;
-  margin-left: 20%;
-  margin-top: 2%; }
+  justify-content: center;
+  margin-left: 10%; }
+
+.father_conteiner_2 {
+  display: flex;
+  justify-content: center;
+  margin-left: 10%; }
+
+.father_conteiner_3 {
+  display: flex;
+  justify-content: center;
+  margin-left: 10%; }
+
+.main_container {
+  flex-direction: column;
+  justify-content: center; }
+
+.row_container {
+  flex-direction: column;
+  width: 100vw; }
+
+.row_container_text {
+  display: inline-flex;
+  border-bottom: 1px  solid  #eaeaea;
+  margin-bottom: 30px;
+  width: 85vw; }
+
+.title_dashboard {
+  flex-direction: column;
+  width: 100vw; }
+
+#add-something {
+  margin-top: 6%;
+  font-size: 18px;
+  color: #DE4549;
+  font-family: Roboto; }
+
+#tour-section {
+  display: inline-flex;
+  flex-direction: column;
+  width: 20%;
+  margin-right: 2%; }
 
 #tour-details {
   display: flex;
   flex-direction: column;
-  margin-left: 90px;
-  width: 600px;
-  border-bottom: 1px solid; }
+  width: 64%;
+  margin-bottom: 40px; }
 
 #tour-section img {
-  width: 200px;
+  width: 300px;
   height: 200px; }
+
+#tour-section h6 {
+  font-size: 1.0rem;
+  color: #4d4d4d;
+  font-family: Roboto;
+  font-weight: 100; }
+
+#tour-section h4 {
+  font-size: 1.3rem;
+  color: #DE4549;
+  font-family: Roboto;
+  font-weight: bold;
+  padding-top: 6%; }
+
+#tour-section h5 {
+  font-size: 1.1rem;
+  color: #0096BC;
+  font-family: Roboto;
+  font-weight: 300; }
 
 .review-item {
   border-bottom: 1px solid grey;
@@ -374,13 +614,7 @@ h3 {
 
 .review-item span {
   font-size: 10px;
-  color: grey; }
-
-#add-something {
-  margin: 100px 0px 70px 200px; }
-
-.dashboard-title {
-  margin: 50px 0px 0px 200px; }
+  color: #eeeeee; }
 
 #profile {
   display: flex;

@@ -1,41 +1,41 @@
-<div style="margin: 100px">
+<div class="stage_post">
   <img src="{{tour.imgPath}}" alt="">
-    <br>
-  {{tour.title}}
-    <br>
-  {{tour.username}}
-    <br>
-  {{tour.descriptionPreview}}
-    <br>
-  {{tour.description}}
-    <br>
-  <p>La duracion aproximada del tour es de: {{tour.duration}} horas</p>
-    <br>
-  <p>Some tips</p>
-    <br>
-  {{tour.tips}}
-    <br>
-
-  <p>Deja un comentario: </p>
-  <form action="/reviews/add?tour_id={{tour._id}}" method="post">
-    <label for="">Usuario:</label>
-    <input type="text" name="user">
-
-    <label for="">Comentario:</label>
-    <textarea type="text" name="comments"></textarea>
-
-    <button type="submit">Publicar</button>
-
-    
-  </form>
-
-  <h2>Reviews</h2>
-  {{#each tour.reviews}}
-  <div class="review-item">
-    <h4>{{this.user}}</h4>
-    <h5>{{this.comments}}</h5>
-  </div>
-  {{else}}
-    <h4>No comments yet</h4>
-  {{/each}}
 </div>
+<section class="post_1">
+  <div class="post_inside">
+    <div class="post_content">
+      <h2>{{tour.title}}</h2>
+      <h6>{{tour.username}}</h6>
+        <br>
+      <h5>{{tour.descriptionPreview}}</h5>
+      <p>{{tour.description}}</p>
+        <br>
+      <h4>Duración aproximada: {{tour.duration}} horas</h4>
+      <h3>Some tips: {{tour.tips}}</h3>
+    </div>
+    <div class="post_content2">
+      <h2>Deja un comentario: </h2>
+      <form action="/reviews/add?tour_id={{tour._id}}" method="post">
+        <div class="input-comp">
+        <label for="">Usuario:</label><br>
+        <input type="text" name="user"><br>
+        </div>
+        <div class="input-comp">
+        <label for="">Comentario:</label><br>
+        <textarea type="text" name="comments"></textarea><br>
+        </div>
+        <button type="submit" class="btn btn-red">Publish</button>
+      </form>
+    </div>
+    <div class="post_content2">
+      <h2>Reviews</h2>
+      {{#each tour.reviews}}
+      <div class="review-item">
+        <h4>{{this.user}}</h4>
+        <p>{{this.comments}}</p>
+      </div>
+      {{else}}
+        <h4>No comments yet</h4>
+      {{/each}}
+    </div>
+</section>

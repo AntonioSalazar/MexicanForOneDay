@@ -1,35 +1,64 @@
-<h1>Cuentanos sobre tu experiencia</h1>
-
-<form action="/dashboard" method="POST" enctype="multipart/form-data">
-  <label for="title">Titulo:</label>
-  <input id="title" type="text" name="title" value="" placeholder="Como te gustaria llamarle a tu experiencia">
-    <br>
-  <label for="descriptionPreview">Preview</label>
-  <input type="text" id="descriptionPreview" name="descriptionPreview" value="" placeholder="Describe tu experiencia en 5 palabras">
-    <br>
-  <label for="description">Description</label>
-  <input type="text" id="description" name="description" value="" placeholder="Cuentanos a detalle tu experiencia!">
-    <br>
-  <label for="duration">Duracion</label>
-  <input type="number" id="duration" name="duration" value="" placeholder="Cuanto dura un tour de este tipo?">
-    <br>
-  <label for="tips">Tips</label>
-  <input type="text" name="tips" id="">
-    <br>
-  <label for="rate">Calificacion</label>
-  <input type="number" id="rate" name="rate" value="" placeholder="Del 1 al 10 que calificacion le darias?">
-    <br>
-  <label for="">Photo</label>
-  <input type="file" name="photo" id="img-experience">
-    <br>
-  <input type="checkbox" name="tourType" value="experience">Experience<br>
-  <input type="checkbox" name="tourType" value="groupTour">Group Tour<br>
-  <input type="checkbox" name="tourType" value="walkingTour" >Walking Tour<br>
-    <h1>choose a category</h1>
-  <input type="checkbox" name="tourCategory" value="museum">Museum<br>
-  <input type="checkbox" name="tourCategory" value="culture">Culture<br>
-  <input type="checkbox" name="tourCategory" value="entertainment" >Entertainment<br>
-  <input type="checkbox" name="tourCategory" value="archeology" >Archeology<br>
-
-  <input type="submit" name="" id="" value="Salvar">
-</form>
+<section class="master">
+<section class="master_2">
+<section class="principal_conteiner">
+      <div class="title">
+        <h3>Mi experiencia</h3>
+        <p>Cuéntanos sobre tu visita en CDMX</p>
+      </div>
+</section>
+<section class="principal_conteiner">
+      <form action="/dashboard" method="POST" enctype="multipart/form-data">
+          <div class="separacion">
+            <input class="checkbox" type="checkbox" name="tourType" value="experience">Experience<br>
+            <input class="checkbox" type="checkbox" name="tourType" value="groupTour">Group Tour<br>
+            <input class="checkbox" type="checkbox" name="tourType" value="walkingTour" >Walking Tour<br>
+        </div>
+      </fom>
+</section>
+<section class="principal_conteiner">
+        <form action="/dashboard" method="POST" enctype="multipart/form-data">
+        <div class="input-comp">
+          <label for="title">Title:</label><br>
+          <input id="title" type="text" name="title" value="" placeholder="Be original as mexicans">
+        </div>
+        <div class="input-comp">
+          <label for="descriptionPreview">Preview:</label><br>
+          <input type="text" id="descriptionPreview" name="descriptionPreview" value="" placeholder="In five words describe it">
+        </div>
+        <div class="input-comp">
+          <label for="description">Description:</label><br>
+          <input type="text" id="description" name="description" value="" placeholder="Tell us a story about your journey!">
+        </div>
+        <div class="input-comp">
+          <label for="duration">Time:</label><br>
+          <input type="number" id="duration" name="duration" value="" placeholder="How long it takes?">
+        </div>
+        <div class="input-comp">
+          <label for="tips">Tips:</label><br>
+          <input type="text" name="tips" id="" placeholder="Mexicans travel with all...">
+        </div>
+        <div class="input-comp">
+          <label for="rate">Rate:</label><br>
+          <input type="number" id="rate" name="rate" value="" placeholder="1 to 10 rate your chilanga experience!">
+        </div>
+        <div class="input-comp">
+          <label for="">Photo</label><br>
+          <input type="file" name="photo" id="img-experience">
+        </div>
+      <form>
+</section>
+<section class="principal_conteiner">
+    <div class="form_card">
+      <div class="separacion">
+        <input class="checkbox" type="checkbox" name="tourCategory" value="museum">Museum<br>
+        <input class="checkbox" type="checkbox" name="tourCategory" value="culture">Culture<br>
+        <input class="checkbox" type="checkbox" name="tourCategory" value="entertainment" >Entertainment<br>
+        <input class="checkbox" type="checkbox" name="tourCategory" value="archeology" >Archeology<br>
+      </div>
+    </div>
+      <input type="submit" name="" id="" value="Publish" class="btn btn-red">
+  </form>
+  </div>
+</section>
+</section>
+</section>
