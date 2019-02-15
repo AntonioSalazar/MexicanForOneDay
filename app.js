@@ -14,7 +14,7 @@ const bcrypt        = require("bcrypt");
 const passport      = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const flash         = require("connect-flash");
-const User          = require("./models/user"); 
+const User          = require("./models/user");
 const MongoStore    = require("connect-mongo")(session);
 
 
@@ -45,7 +45,7 @@ app.use(session({
   resave: true,
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
-    ttl: 24 * 60 * 60 // 1 day
+    ttl: 24 * 60 * 60, // 1 day
   })
 }));
 

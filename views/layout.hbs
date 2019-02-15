@@ -10,22 +10,16 @@
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
+    <nav>
 
-    <nav class="navbar navbar-expand-md sticky-top">
-      <a href="/" class="navbar-brand"><img src="../images/logo-img.png" alt=""></a>
-      <div id="nav-links">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a href="#look-for-tour">Look for a Tour</a>
-          </li>
-          <li class="nav-item">
-            <a href="#about-us">About us</a>
-          </li>
-          <li class="nav-item">
-            <a href="#our-trips">Our Trips</a>
-          </li>
-        </ul>
-      </div>
+      <img src="./images/logo-img.png" alt="logo-img" href="/index" >
+      <form class="main_link" action="/login" method="GET">
+        <a href="/login">Log in</a>
+      </form>
+        <form class="button" action="/signup" method="GET">
+           <a class="btn btn-primary" href="/signup" role="button">Sign up</a>
+       </form>
+    
     </nav>
 
   {{{body}}}

@@ -8,9 +8,9 @@ nav {
   background: #000000;
   display: flex; }
 
-#nav-links {
-  height: 57px;
-  margin-left: 55%; }
+nav img {
+  padding-left: 5%;
+  padding-right: 60%; }
 
 .main_link {
   position: absolute;
@@ -88,7 +88,8 @@ label {
   font-family: Roboto;
   font-weight: 500;
   font-size: 18px;
-  color: #4A4A4A; }
+  color: #4A4A4A;
+  padding-top: 24px; }
 
 input {
   width: 400px;
@@ -132,7 +133,7 @@ input {
   padding-top: 19px; }
 
 .boton_index {
-  margin-top: 24px; }
+  margin-top: 40px; }
 
 .btn-stage {
   width: 200px;
@@ -337,25 +338,45 @@ h3 {
   flex-direction: column;
   color: #DE4549; }
 
-#own-experiences-div {
-  display: flex;
-  flex-direction: column; }
+#own-experience-div {
+  display: inline-flex;
+  flex-direction: column;
+  width: 25%;
+  padding-left: 5%;
+  height: 400px; }
 
 #img-experience {
-  width: 20%;
+  width: 100%;
   height: 200px; }
 
 #experience-container {
-  margin: 100px;
   display: flex;
   flex-direction: column; }
 
-.error-message {
-  background: #F02B63;
-  box-sizing: border-box;
-  color: #fff;
-  margin: 20px auto;
-  padding: 20px;
-  width: 100%; }
+#experience-container h1 {
+  color: black;
+  font-size: 2rem;
+  padding-top: 24vh; }
+
+#texto {
+  padding-top: 20px;
+  width: 100%;
+  color: #4d4d4d;
+  font-family: Roboto;
+  font-weight: 100; }
+
+#texto h3 {
+  font-size: 1.8rem;
+  color: #DE4549;
+  font-family: Roboto;
+  font-weight: 800;
+  text-align: left; }
+
+#card-container_ {
+  height: 800px; }
+
+h4 {
+  font-size: 1.4rem;
+  color: #DE4549; }
 
 /*# sourceMappingURL=style.css.map */
