@@ -7,46 +7,41 @@
 
 
 <div id="experience-container">
-  <h1>Own experiences</h1>
-  {{#each tours}}
-  <div id="own-experience-div">
-      {{#ifCond tourType "experience" }}
-      <a href="/detail_experience/{{this._id}}">
-        <img src="{{this.imgPath}}" alt="" id="img-experience">
-        <h6>{{this.descriptionPreview}}</h6>
-        <h4>{{this.title}}</h4>
-      </a>
-      <h4>Calificacion: {{this.rate}}</h4>
+  <div class="card-container_">
+    <h1>Own experiences</h1>
+      <a href="/experience/add">Añade tu propia experien  cia:</a>
+    <div class="card-section">
+    {{#each tours}}
+      <div id="own-experience-div">
+        {{#ifCond tourType "experience" }}
+          <a href="/detail_experience/{{this._id}}">
+            <img src="{{this.imgPath}}" alt="" id="img-experience">
+            <div id="texto">
+              <h3>{{this.title}}</h4>
+              <h6>{{this.descriptionPreview}}</h6>
+              <h4>Calificacion: {{this.rate}}</h4>
+            </div>
+            </a>
       {{/ifCond}}
       {{else}}
         <h2>No experieces yet :(</h2>
+      </div>
+      <br>
+      {{/each}}
+    </div>
   </div>
-  <br>
-  {{/each}}
-    <a href="/experience/add">Añade tu propia experiencia:</a>
-</div>
 
-<div id="experience-container">
+
+<div id="card-container_">
   <h1>Group Tours</h1>
   {{#each tours}}
-  <div id="own-experience-div">
-      {{#ifCond tourType "groupTour" }}
-      <a href="/detail_group_tour/{{this._id}}">
-        <img src="{{this.imgPath}}" alt="" id="img-experience">
-        <h6>{{this.descriptionPreview}}</h6>
-        <h4>{{this.title}}</h4>
-        </a>
-        <h4>Calificacion: {{this.rate}}</h4>
-      {{/ifCond}}
-      {{else}}
-        <h2>No group Tours yet :(</h2>
-  </div>
+
   <br>
   {{/each}}
     <a href="/group_tour/add">Añade tu propio tour:</a>
 </div>
 
-<div id="experience-container">
+<div id="card-container_">
   <h1>Walking Tour</h1>
   {{#each tours}}
   <div id="own-experience-div">
@@ -64,4 +59,5 @@
   <br>
   {{/each}}
     <a href="/walking_tour/add">Añade tu propio tour:</a>
+</div>
 </div>
