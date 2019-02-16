@@ -108,10 +108,27 @@ hbs.registerHelper('ifCond', function(v1, v2, options) {
   return options.inverse(this);
 });
 
+app.locals.isLogged = false
+app.locals.loggedUser = {}
+
+function isLogged(req, res, next) {
+  if (req.user) {
+    app.locals.isLogged = true
+    app.locals.loggedUser = req.user
+    next()
+  } else {
+    app.locals.isLogged = false
+    app.locals.loggedUser = {}
+    next()
+  }
+}
+
+
+
 const index = require('./routes/index');
 const authRoutes = require("./routes/auth-routes");
-app.use('/', index);
-app.use("/", authRoutes);
+app.use('/', isLogged, index);
+app.use("/", isLogged, authRoutes);
 
 
 module.exports = app;

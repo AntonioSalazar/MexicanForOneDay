@@ -7,12 +7,12 @@
       </div>
       <form action="/login" method="POST">
         <div class="input-comp">
-          <label for="email">Email:</label>
+          <label for="email">Email:</label><br>
           <input id="email" type="text" name="email">
         </div>
         <div class="input-comp">
-          <label for="password">Password:</label>
-          <input type="password" name="password">
+          <label for="password">Password:</label><br>
+          <input type="password" name="password" >
         </div>
           {{#if message}}
         <div class="error-message">{{ message }}</div>

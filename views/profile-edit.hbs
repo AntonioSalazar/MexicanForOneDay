@@ -1,25 +1,35 @@
-
-
-  <h2 style="margin: 20px 0px 0px 500px">Edit your info</h2>
-  <form action="/profile/edit?user_id={{user._id}}" method="post" enctype="multipart/form-data">
-    <div id="profile-edit">
-      <label for="name">Nombre:</label>
-      <input id="name" type="text" name="username" value="{{user.username}}" placeholder="{{user.username}}">
-        <br>
-        <br>
-      <label for="description">Bio</label>
-      <input id="description" type="text" name="description" placeholder="Algo sobre ti...">
-        <br>
-      <label for="email">Email:</label>
-      <input id="email" type="text" name="email" value="{{user.email}}" placeholder="{{user.email}}">
-          <br>
-      <label for="password">Password:</label>
-      <input id="password" type="password" name="password" value="" placeholder="Password" required>
-        <br>
-      <label>Photo</label>
-      <input type="file" name="photo">
-        <br>
-      <input type="submit" class="btn btn-red" value="SAVE">
-    </div> 
-  </form>
-</div>
+<section class="master">
+<section class="master_2">
+<section class="principal_conteiner">
+      <div class="title">
+          <h3>we want to know more about you</h3>
+        <p>Mexicans are always talking</p>
+      </div>
+</section>
+<section class="principal_conteiner">
+      <form action="/profile/edit?user_id={{user._id}}" method="POST" enctype="multipart/form-data">
+            <div class="input-comp">
+            <label for="name">Nombre:</label><br>
+            <input id="name" type="text" name="username" value="{{user.username}}" placeholder="{{user.username}}">
+          </div>
+          <div class="input-comp">
+            <label for="description">Bio</label><br>
+            <input id="description" type="text" name="description" placeholder="Algo sobre ti...">
+          </div>
+          <div class="input-comp">
+            <label for="email">Email:</label><br>
+            <input id="email" type="text" name="email" value="{{user.email}}" placeholder="{{user.email}}">
+          </div>
+          <div class="input-comp">
+            <label for="password">Password:</label><br>
+            <input id="password" type="password" name="password" value="" placeholder="Password" required>
+          </div>
+          <div class="input-comp">
+            <label>Photo</label><br>
+            <input type="file" name="photo">
+        </div>
+        <input type="submit" class="btn btn-red" value="Time to mexican">
+      </fom>
+</section>
+</section>
+</section>
