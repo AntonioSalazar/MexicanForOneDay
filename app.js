@@ -123,6 +123,8 @@ function isLogged(req, res, next) {
   }
 }
 
+
+
 const index = require('./routes/index');
 const authRoutes = require("./routes/auth-routes");
 app.use('/', isLogged, index);

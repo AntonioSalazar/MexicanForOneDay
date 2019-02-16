@@ -738,6 +738,8 @@ h3 {
     margin-top: 341%; }
   footer img {
     margin-left: 38%; }
+  .stage_post img {
+    height: 400px; }
   .container-login {
     width: 90%; }
   .link3 {
@@ -759,6 +761,17 @@ h3 {
   .master_2 {
     margin-left: 0%; }
   .principal_conteiner {
-    width: 100%; } }
+    width: 100%; }
+  .post_content {
+    width: 90%;
+    margin-left: 20px;
+    margin-right: 20px; }
+  .post_content2 {
+    width: 90%;
+    margin-left: 20px; }
+  textarea {
+    width: 95%; }
+  .post_1 input {
+    width: 95%; } }
 
 /*# sourceMappingURL=style.css.map */
