@@ -11,7 +11,13 @@ nav{
   display: flex;
 }
 
+.nav-links span{
+  padding-top: 18px;
+}
+
+
 #nav-links{
+  display:inline-flex;
   height: 57px;
   margin-left: 55%
 }
@@ -1007,4 +1013,10 @@ textarea {
 }
 
 
+}
+
+
+#profile-logo{
+  position: absolute;
+  padding-bottom: 5px;
 }

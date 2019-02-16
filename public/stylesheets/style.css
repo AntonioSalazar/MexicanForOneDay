@@ -8,7 +8,11 @@ nav {
   background: #000000;
   display: flex; }
 
+.nav-links span {
+  padding-top: 18px; }
+
 #nav-links {
+  display: inline-flex;
   height: 57px;
   margin-left: 55%; }
 
@@ -773,5 +777,9 @@ h3 {
     width: 95%; }
   .post_1 input {
     width: 95%; } }
+
+#profile-logo {
+  position: absolute;
+  padding-bottom: 5px; }
 
 /*# sourceMappingURL=style.css.map */
