@@ -1,28 +1,30 @@
 <section class="login">
+
     <div class="container-login">
       <div class="title">
         <h3>You can be mexican too</h3>
         <p>Just take a few minutes</p>
       </div>
-
       <form action="/signup" method="POST">
         <div class="input-comp">
-          <label for="username">User Name:</label>
-          <input type="text" name="username" id="">
+          <label for="email">Email:</label><br>
+          <input id="email" type="text" name="email" placeholder="A real one, mexicans never lie!">
         </div>
         <div class="input-comp">
-          <label for="email">Email:</label>
-          <input id="email" type="text" name="email">
-        </div>
+        <label for="username">User Name:</label><br>
+        <input type="text" name="username" id="" placeholder="A chingon one">
+      </div>
         <div class="input-comp">
-          <label for="password">Password:</label>
-          <input type="password" name="password">
+          <label for="password">Password:</label><br>
+          <input type="password" name="password" placeholder="Just think an 8 characters word">
         </div>
-        {{#if message}}
+          {{#if message}}
         <div class="error-message">{{ message }}</div>
           {{/if}}
         <button type="submit" name="button" class="btn btn-red">Im ready to be a chilango!</button>
-        <div class="link2">
+        <div class="link">
+        </div>
+        <div class="link3">
             <p>I already have an account?</p>
             <a href="/login">Log in</a>
         </div>

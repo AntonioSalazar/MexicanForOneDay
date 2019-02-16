@@ -89,7 +89,6 @@ router.get("/detail_experience/:id", (req, res, next ) =>{
   Tour.findOne({"_id": tourId})
   .then(tour =>{
     let comments = tour.reviews;
-    console.log(comments)
     res.render("detail-experience", {tour, comments})
   })
   .catch(err => next(err))

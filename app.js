@@ -21,7 +21,6 @@ const MongoStore    = require("connect-mongo")(session);
 
 mongoose.Promise = Promise;
 mongoose
-  // .connect('mongodb://127.0.0.1/mexicanforoneday', {useNewUrlParser: true})
   .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
@@ -109,10 +108,27 @@ hbs.registerHelper('ifCond', function(v1, v2, options) {
   return options.inverse(this);
 });
 
+app.locals.isLogged = false
+app.locals.loggedUser = {}
+
+function isLogged(req, res, next) {
+  if (req.user) {
+    app.locals.isLogged = true
+    app.locals.loggedUser = req.user
+    next()
+  } else {
+    app.locals.isLogged = false
+    app.locals.loggedUser = {}
+    next()
+  }
+}
+
+
+
 const index = require('./routes/index');
 const authRoutes = require("./routes/auth-routes");
-app.use('/', index);
-app.use("/", authRoutes);
+app.use('/', isLogged, index);
+app.use("/", isLogged, authRoutes);
 
 
 module.exports = app;
