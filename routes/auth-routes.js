@@ -47,7 +47,7 @@ authRoutes.post("/signup", (req, res, next ) =>{
           message: "Algo salio mal, no he podido guarduar tu usuario. Intentalo en 3 horas 2 minutos 47 segundo exactos!"
         })
       } else{
-        res.redirect("/dashboard")
+        res.redirect("/")
       }
     }))
   })
@@ -67,16 +67,23 @@ authRoutes.post("/login", passport.authenticate("local", {
   passReqToCallback: true
 }));
 
+
+
+authRoutes.get("/detail_experience/:id", ensureLogin.ensureLoggedIn(), (req, res) => {
+  res.render("login", { user: req.user });
+});
+
+authRoutes.get("/detail_walking_tour/:id", ensureLogin.ensureLoggedIn(), (req, res) => {
+  res.render("login", { user: req.user });
+});
+
+authRoutes.get("/detail_group_tour/:id", ensureLogin.ensureLoggedIn(), (req, res) => {
+  res.render("login", { user: req.user });
+});
+
 authRoutes.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/login");
 });
 
-authRoutes.get("/detail-experience", ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render("private", { user: req.user });
-});
-
-authRoutes.get("/detail-walking", ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render("private", { user: req.user });
-});
 module.exports = authRoutes;
