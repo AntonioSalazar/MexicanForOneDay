@@ -70,15 +70,15 @@ authRoutes.post("/login", passport.authenticate("local", {
 
 
 authRoutes.get("/detail_experience/:id", ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render("private", { user: req.user });
+  res.render("login", { user: req.user });
 });
 
 authRoutes.get("/detail_walking_tour/:id", ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render("private", { user: req.user });
+  res.render("login", { user: req.user });
 });
 
 authRoutes.get("/detail_group_tour/:id", ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render("private", { user: req.user });
+  res.render("login", { user: req.user });
 });
 
 authRoutes.get("/logout", (req, res) => {
