@@ -8,9 +8,19 @@ nav {
   background: #000000;
   display: flex; }
 
+.nav-links span {
+  padding-top: 18px; }
+
 #nav-links {
+  display: inline-flex;
   height: 57px;
   margin-left: 55%; }
+
+.error {
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh; }
 
 .main_link {
   padding-top: 2%;
@@ -43,6 +53,7 @@ li {
 
 .stage {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   background-image: url("../images/bellas_artes_home.jpg");
@@ -306,11 +317,13 @@ input {
 
 .third-section {
   display: flex;
+  flex-wrap: wrap;
   width: 100vw;
   height: 600px; }
 
 .third-section-inside {
   display: inline-flex;
+  flex-wrap: wrap;
   width: 100vw;
   margin-top: 90px; }
 
@@ -325,9 +338,9 @@ input {
 
 .card {
   flex-direction: column;
-  width: 33%;
+  width: 15%;
   height: 400px;
-  margin-left: 100px;
+  margin-left: 150px;
   margin-right: 100px;
   text-align: center;
   border-style: none; }
@@ -365,7 +378,9 @@ input {
 footer {
   display: flex;
   height: 15vw;
-  background-color: #000000; }
+  width: 100%;
+  background-color: #000000;
+  bottom: 0px; }
 
 footer img {
   display: flex;
@@ -532,6 +547,7 @@ h3 {
 
 .father_conteiner {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-left: 10%; }
 
@@ -641,8 +657,132 @@ h3 {
 #profile-edit {
   margin: 50px 0px 100px 500px; }
 
+@media only screen and (max-width: 600px) {
+  .stage_text {
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 74vw;
+    height: 320px; }
+  h1 {
+    padding-top: 2vh;
+    margin-top: 0px;
+    font-family: sans-serif;
+    font-size: 32px;
+    font-weight: 100px; }
+  .btn:not(:disabled):not(.disabled) {
+    cursor: pointer; }
+  .btn-primary {
+    width: 240px;
+    height: 50px;
+    margin-right: 5%; }
+  .button {
+    padding-top: 45%; }
+  .first-section {
+    display: flex;
+    width: 100vw;
+    height: 1000px; }
+  .first-section-inside {
+    flex-direction: column;
+    width: 100vw;
+    margin-top: 0px; }
+  .img-mariachi {
+    width: 200px;
+    height: 350px; }
+  .formulario {
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%; }
+  input {
+    width: 286px;
+    height: 56px; }
+  .dropdown {
+    width: 360px;
+    height: 56px; }
+  .btn-red {
+    width: 290px; }
+  .second-section-inside {
+    flex-direction: column;
+    width: 100vw;
+    margin-bottom: 100px; }
+  .img-lady {
+    margin-bottom: 20px; }
+  .card2 {
+    flex-direction: column;
+    width: 50%;
+    height: 800px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-style: none;
+    text-align: center; }
+  .card2 h2 {
+    font-size: 28px;
+    padding-left: 24px; }
+  .card2 p {
+    display: flex;
+    font-size: 1.3rem;
+    font-weight: lighter; }
+  .second-section {
+    height: 800px; }
+  .third-section-inside {
+    flex-direction: column;
+    margin-top: 100%;
+    height: 1600px; }
+  .card {
+    display: block;
+    width: 80%;
+    padding-top: 20px;
+    margin-bottom: 56px;
+    margin-left: 30px; }
+  .btn-primary {
+    width: 240px; }
+  footer {
+    height: 100vw;
+    bottom: 0px;
+    margin-top: 341%; }
+  footer img {
+    margin-left: 38%; }
+  .stage_post img {
+    height: 400px; }
+  .container-login {
+    width: 90%; }
+  .link3 {
+    flex-direction: column;
+    margin-left: 40px; }
+  .link3 a {
+    margin-left: 80px;
+    font-size: 1.3rem; }
+  .link2 {
+    flex-direction: column;
+    margin-left: 12%;
+    margin-top: 8px; }
+  .link2 a {
+    text-align: center; }
+  #tour-section {
+    width: 100%; }
+  .row_container_text {
+    flex-direction: column; }
+  .master_2 {
+    margin-left: 0%; }
+  .principal_conteiner {
+    width: 100%; }
+  .post_content {
+    width: 90%;
+    margin-left: 20px;
+    margin-right: 20px; }
+  .post_content2 {
+    width: 90%;
+    margin-left: 20px; }
+  textarea {
+    width: 95%; }
+  .post_1 input {
+    width: 95%; } }
+
 #profile-logo {
   position: absolute;
-  bottom: 20px; }
+  padding-bottom: 5px; }
+
+#no-match {
+  margin: 250px; }
 
 /*# sourceMappingURL=style.css.map */
