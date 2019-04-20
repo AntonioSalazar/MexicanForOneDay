@@ -26,7 +26,7 @@ authRoutes.post("/signup", (req, res, next ) =>{
   User.findOne({email})
   .then(user =>{
     if(user != null){
-      res.render("auth/signup", {
+      res.status(200).render("auth/signup", {
         message: "El usuario ingresado Ya existe! 😬"
       }) 
       return
