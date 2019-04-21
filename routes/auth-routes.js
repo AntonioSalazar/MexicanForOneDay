@@ -43,7 +43,7 @@ authRoutes.post("/signup", (req, res, next ) =>{
 
     newUser.save((err =>{
       if (err) {
-        res.render("auth/signup", {
+        res.status(200).render("auth/signup", {
           message: "Algo salio mal, no he podido guarduar tu usuario. Intentalo en 3 horas 2 minutos 47 segundo exactos!"
         })
       } else{
