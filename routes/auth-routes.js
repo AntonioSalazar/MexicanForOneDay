@@ -70,7 +70,7 @@ authRoutes.post("/login", passport.authenticate("local", {
 
 
 authRoutes.get("/detail_experience/:id", ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render("login", { user: req.user });
+  res.status(200).render("login", { user: req.user });
 });
 
 authRoutes.get("/detail_walking_tour/:id", ensureLogin.ensureLoggedIn(), (req, res) => {
