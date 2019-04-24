@@ -83,7 +83,7 @@ authRoutes.get("/detail_group_tour/:id", ensureLogin.ensureLoggedIn(), (req, res
 
 authRoutes.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("/login");
+  res.status(200).redirect("/login");
 });
 
 module.exports = authRoutes;
