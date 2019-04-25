@@ -7,7 +7,6 @@ const bcryptSalt  = 10;
 const ensureLogin = require("connect-ensure-login");
 const uploadCloud = require('../config/cloudinary.js');
 
-/* GET home page */
 router.get('/', (req, res, next) => {
   res.render('index');
 });
